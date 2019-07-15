@@ -166,7 +166,8 @@ if (!empty($_POST)) {
             email($to,$subject,$body);
           }
           logger($user->data()->id,"User Manager","Added user $username.");
-          Redirect::to($us_url_root.'users/admin.php?view=user&id='.$theNewId);
+          //Redirect::to($us_url_root.'users/admin.php?view=user&id='.$theNewId);
+          Redirect::to($us_url_root.'/index.php');
         } catch (Exception $e) {
           die($e->getMessage());
         }
