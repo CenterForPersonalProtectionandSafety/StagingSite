@@ -1,0 +1,236 @@
+body {
+    /*background-color: #00315c;*/
+    background-color: white;
+}
+
+.moduleButton {
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    background: #00315c;
+    padding: 6px 12px 6px 12px;
+    text-decoration: none;
+}
+
+.moduleButton:hover {
+    background: #3085ba;
+    text-decoration: none;
+    color: white;
+}
+
+.moduleButton:focus {
+    background: #3085ba;
+    text-decoration: none;
+    color: white;
+}
+
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+    background-color: #00315c !important;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: #3085ba !important;
+}
+
+.logintopspace {
+    margin-bottom: 64px;
+}
+
+.loginbottomspace {
+    margin-bottom: 136px;
+}
+
+.joinbottomspace {
+    margin-bottom: 64px;
+}
+
+.jointopspace {
+    margin-bottom: 32px;
+}
+
+.welcomeTitle {
+    font-size: 22px;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+
+.descriptionBanner {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: #551503;
+}
+
+.moduleColorOdd {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: white;
+}
+
+.moduleColorEven {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: #f3f3f3;
+}
+
+.descriptionContent {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.playdescription {
+    padding-left: 380px;
+    padding-right: 380px;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 32px;
+    text-align: justify;
+}
+
+.viewcoursep {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.tier2banner {
+    background: url(/usersc/images/tier2_banner.jpg) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 505px;
+    margin-bottom: 0;
+}
+
+.tier3banner {
+    background: url(/usersc/images/tier3banner.jpg) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 505px;
+    margin-bottom: 0;
+}
+
+.wlsbanner {
+    background: url(/usersc/images/wls_banner.jpg) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 505px;
+    margin-bottom: 0;
+}
+
+.blbanner {
+    background: url(/usersc/images/bl_banner.jpg) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 505px;
+    margin-bottom: 0;
+}
+
+.modulePage {
+    padding-top: 0 !important;
+}
+
+.pageTitle {
+    margin-top:240px;
+    font-weight: 600;
+    font-size: 32px !important;
+    margin-bottom: 0;
+    color: white !important;
+}
+
+.pageTitleRow1 {
+    font-weight: 600;
+    font-size: 83px !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: white !important;
+}
+
+.pageTitleRow2 {
+    font-weight: 600;
+    font-size: 83px !important;
+    margin-top: -16px;
+    margin-bottom: 0;
+    color: white !important;
+}
+
+.indexbarplay {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: white;
+}
+
+.managercheck {
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+
+/* ---- usersc/login.php ---- */
+
+.login-logo {
+    width: 300px;
+    height: auto;
+}
+
+.forgot-password-row {
+    margin-bottom: 70px;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    #login-row {
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    #login-row {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    #login-row {
+        padding-left: 350px;
+        padding-right: 350px;
+    }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #00315c;
+}
