@@ -4,7 +4,11 @@ require_once 'users/init.php';
 require_once $abs_us_root.$us_url_root.'users/includes/header.php';
 require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 if (!securePage($_SERVER['PHP_SELF'])){die();}
-if(isset($user) && $user->isLoggedIn()){}
+if(isset($user) && $user->isLoggedIn()){
+  if ($user->data()->updated_pass_status == 0) {
+    Redirect::to($us_url_root.'usersc/user_settings.php');
+  }
+}
 
 ?>
 
@@ -14,7 +18,6 @@ if(isset($user) && $user->isLoggedIn()){}
 <div class="container-fluid">
     <div class="text-center">
         <p class="welcomeTitle">WELCOME TO</p>
-        <p><?=$user->data()->updated_pass_status?></p>
         <img src="/usersc/images/universitylogo.png" alt="..." class="">
     </div>
 </div>
