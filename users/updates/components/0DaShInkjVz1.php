@@ -1,30 +1,16 @@
 <?php
 
-//Adds US Plugin Hook support
-//Release Version 4.4.10
-//Release Date Unknown
-//Rewrote 2019-02-23 BA
+//Adds US Form Manager tables and data
+//Release Version 4.4.11
+//Release Date 2019-04-27
+//Rewrote 2019-04-27 DH
 
 $countE=0;
 
-$db->query("CREATE TABLE us_plugin_hooks (
-  id int(11) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  page varchar(255) NOT NULL,
-  folder varchar(255) NOT NULL,
-  position varchar(255) NOT NULL,
-  hook varchar(255) NOT NULL,
-  disabled tinyint(1) DEFAULT 0
-)");
-if(!$db->error()) {
-  logger(1,"System Updates","Added us_plugin_hooks table");
-} else {
-  $error=$db->errorString();
-  $countE++;
-  logger(1,"System Updates","Unable to add us_form_views table, Error: ".$error);
-  $errors[] = "Unable to add us_form_views table, Error: ".$error;
-}
-
-
+$db->query("DELETE FROM us_management WHERE view = ?",["permission"]);
+$db->query("DELETE FROM us_management WHERE view = ?",["permissions"]);
+$db->query("DELETE FROM us_management WHERE view = ?",["user"]);
+$db->query("DELETE FROM us_management WHERE view = ?",["users"]);
 
 if($countE==0) {
   $db->insert('updates',['migration'=>$update]);
