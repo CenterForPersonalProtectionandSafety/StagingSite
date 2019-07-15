@@ -220,10 +220,7 @@ $userdetails=$user2->data();
                     <h1>Update your user settings</h1>
                     <?php if(!$errors=='') {?><div class="alert alert-danger"><?=display_errors($errors);?></div><?php } ?>
                     <?php if(!$successes=='') {?><div class="alert alert-success"><?=display_successes($successes);?></div><?php } ?>
-										<?php if($user->data()->updated_pass_status == 0){
-											echo '<div class="form-group">
-												<p>This is your first time loggin in, please update your password.</p>
-											</div>'}?>
+										<?php if($user->data()->updated_pass_status == 0){}?>
 
                     <form name='updateAccount' action='user_settings.php' method='post'>
 
