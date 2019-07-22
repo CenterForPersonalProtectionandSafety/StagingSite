@@ -22,29 +22,11 @@ for($i = 1; $i < $self_path_length; $i++){
 
 require_once $abs_us_root.$us_url_root.'users/helpers/helpers.php';
 
-// Set config for server
-// $GLOBALS['config'] = array(
-// 	'mysql'      => array(
-// 'host'         => 'localhost',
-// 'username'     => 'root',
-// 'password'     => 'CPPSdev1!Staging',
-// 'db'           => 'cpps_staging',
-// ),
-// 'remember'        => array(
-//   'cookie_name'   => 'pmqesoxiw318374csb',
-//   'cookie_expiry' => 604800  //One week, feel free to make it longer
-// ),
-// 'session' => array(
-//   'session_name' => 'user',
-//   'token_name' => 'token',
-// )
-// );
-
-// Set config for localhost
+Set config for server
 $GLOBALS['config'] = array(
 	'mysql'      => array(
 'host'         => 'localhost',
-'username'     => 'cpps_staging_user',
+'username'     => 'root',
 'password'     => 'CPPSdev1!Staging',
 'db'           => 'cpps_staging',
 ),
@@ -57,6 +39,24 @@ $GLOBALS['config'] = array(
   'token_name' => 'token',
 )
 );
+
+// // Set config for localhost
+// $GLOBALS['config'] = array(
+// 	'mysql'      => array(
+// 'host'         => 'localhost',
+// 'username'     => 'cpps_staging_user',
+// 'password'     => 'CPPSdev1!Staging',
+// 'db'           => 'cpps_staging',
+// ),
+// 'remember'        => array(
+//   'cookie_name'   => 'pmqesoxiw318374csb',
+//   'cookie_expiry' => 604800  //One week, feel free to make it longer
+// ),
+// 'session' => array(
+//   'session_name' => 'user',
+//   'token_name' => 'token',
+// )
+// );
 
 //If you changed your UserSpice or UserCake database prefix
 //put it here.
