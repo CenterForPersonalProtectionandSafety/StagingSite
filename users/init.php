@@ -22,7 +22,7 @@ for($i = 1; $i < $self_path_length; $i++){
 
 require_once $abs_us_root.$us_url_root.'users/helpers/helpers.php';
 
-Set config for server
+//Set config for server
 $GLOBALS['config'] = array(
 	'mysql'      => array(
 'host'         => 'localhost',
