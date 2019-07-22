@@ -110,7 +110,7 @@ function activeDropdown($View, $dropId, $Area = false){
           <li class="menu-title">Manage</li><!-- /.menu-title -->
             <li <?=($view == 'users') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=users"><i class="menu-icon fa fa-user"></i>Users</a></li>
             <li <?=($view == 'learner') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=learner"><i class="menu-icon fa fa-users"></i>Learners List</a></li>
-
+            <li <?=($view == 'upload') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=upload"><i class="menu-icon fa fa-users"></i>User Upload</a></li>
 
           <h3 class="menu-title">Misc</h3><!-- /.menu-title -->
           <li class="menu-item">

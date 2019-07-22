@@ -64,6 +64,10 @@ ini_set('memory_limit','1024M');
       $path = usView('_admin_users.php');
       include($path);
       break;
+    case "upload":
+      $path = usView('_user_upload.php');
+      include($path);
+      break;
     case "bl":
       $path = usView('_bl_list.php');
       include($path);
