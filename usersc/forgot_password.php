@@ -18,17 +18,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 require_once '../users/init.php';
-require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
+require_once $abs_us_root.$us_url_root.'users/includes/header.php';
+
+//require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
+
 
 if (!securePage($_SERVER['PHP_SELF'])){die();}
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
 
 if(ipCheckBan()){Redirect::to($us_url_root.'usersc/scripts/banned.php');die();}
 $error_message = null;
@@ -47,7 +44,7 @@ if (Input::get('forgotten_password')) {
     $fuser = new User($email);
     //validate the form
     $validate = new Validate();
-    $msg1 = lang("GEN_EMAIL");
+    $msg1 = "Email";
     $validation = $validate->check($_POST,array('email' => array('display' => $msg1,'valid_email' => true,'required' => true,),));
 
     if($validation->passed()){
@@ -55,59 +52,23 @@ if (Input::get('forgotten_password')) {
           $vericode=randomstring(15);
           $vericode_expiry=date("Y-m-d H:i:s",strtotime("+$settings->reset_vericode_expiry minutes",strtotime(date("Y-m-d H:i:s"))));
           $db->update('users',$fuser->data()->id,['vericode' => $vericode,'vericode_expiry' => $vericode_expiry]);
-
-            //Email options
+            //send the email
             $options = array(
               'fname' => $fuser->data()->fname,
               'email' => rawurlencode($email),
               'vericode' => $vericode,
               'reset_vericode_expiry' => $settings->reset_vericode_expiry
             );
+            $subject = "Password Reset";
             $encoded_email=rawurlencode($email);
-
-            //Email Body
             $body =  email_body('_email_template_forgot_password.php',$options);
-
-
-            $fname = $fuser->data()->fname;
-            $email = rawurlencode($email);
-            $reset_vericode_expiry = $settings->reset_vericode_expiry;
-
-            $mail = new PHPMailer;
-            $mail->isSMTP();
-            $mail->SMTPDebug = 0;
-            $mail->Host = 'smtp.gmail.com';
-            $mail->Port = 587;
-            $mail->SMTPSecure = 'tls';
-            $mail->SMTPAuth = true;
-            $mail->Username = "michael.arnold.cpps@gmail.com";
-            $mail->Password = "marnoldCPPSdev1!";
-            $mail->setFrom('michael.arnold.cpps@gmail.com', 'CPPS Admin');
-            $mail->addReplyTo('dontreplyto@example.com', 'First Last');
-
-            $mail->addAddress($email, $fname);
-            $mail->Subject = "Password Reset";
-            // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-            $mail->Body = $body;
-
-            function save_mail($mail)
-            {
-                $path = "{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail";
-                $imapStream = imap_open($path, $mail->Username, $mail->Password);
-                $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
-                imap_close($imapStream);
-                return $result;
-            }
-
-            //$email_sent=email($email,$subject,$body);
+            $email_sent=email($email,$subject,$body);
             logger($fuser->data()->id,"User","Requested password reset.");
-            if(!$mail->send()){
-                $errors[] = $mail->ErrorInfo;;
-            }else {
-              $email_sent = true;
+            if(!$email_sent){
+                $errors[] = "Email NOT sent due to error. Please contact site administrator.";
             }
         }else{
-            $errors[] = lang("ERR_EMAIL");
+            $errors[] = "That email does not exist in our database";
         }
     }else{
         //display the errors
@@ -119,18 +80,49 @@ if (Input::get('forgotten_password')) {
 if ($user->isLoggedIn()) $user->logout();
 ?>
 
-<?php
+<!-- ************************************************** HTML STARTS HERE  ************************************************************** -->
 
-if($email_sent){
-    require $abs_us_root.$us_url_root.'users/views/_forgot_password_sent.php';
-}else{
-    require $abs_us_root.$us_url_root.'users/views/_forgot_password.php';
-}
 
-?>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/logged_out.css">
+<script type="text/javascript">
+  $(document).ready(function(){
+      document.getElementById('joinModal').style.display='block'
+    });
+</script>
+
+
+
+<div class="w3-container">
+  <div id="joinModal" class="w3-modal" data-keyboard="false" data-backdrop="static">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:1100px">
+
+      <div class="w3-center"><br>
+        <img src="/usersc/images/cppslogo.png" class="w3-image" style="width:100%;max-width:300px">
+      </div>
+
+      <?php
+
+      if($email_sent){
+          require $abs_us_root.$us_url_root.'users/views/_forgot_password_sent.php';
+      }else{
+          require $abs_us_root.$us_url_root.'users/views/_forgot_password.php';
+      }
+
+      ?>
+
+        <div class="w3-bar">
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>users/login.php'"><i class="fa fa-sign-in"></i> Login</button>
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
+          <!-- <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>users/join.php'"><i class="fa fa-user-plus"></i> Register</button> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+<!-- footer -->
 <!-- footers -->
 <?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>
 
