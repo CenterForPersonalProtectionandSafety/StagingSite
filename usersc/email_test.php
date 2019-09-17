@@ -27,7 +27,7 @@ if(isset($_POST["Email"])){
   // 0 = off (for production use)
   // 1 = client messages
   // 2 = client and server messages
-  $mail->SMTPDebug = 2;
+  $mail->SMTPDebug = 0;
   //Set the hostname of the mail server
   $mail->Host = 'smtp.gmail.com';
   // use
@@ -86,8 +86,6 @@ if(isset($_POST["Email"])){
       echo "Mailer Error: " . $mail->ErrorInfo;
   } else {
       echo "Message sent!";
-      //Section 2: IMAP
-      //Uncomment these to save your message in the 'Sent Mail' folder.
       if (save_mail($mail)) {
           echo "Message saved!";
       }
