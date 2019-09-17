@@ -4,57 +4,132 @@ require_once 'users/init.php';
 require_once $abs_us_root.$us_url_root.'users/includes/header.php';
 require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 if (!securePage($_SERVER['PHP_SELF'])){die();}
-if(isset($user) && $user->isLoggedIn()){
-  if ($user->data()->updated_pass_status == 0) {
-    Redirect::to($us_url_root.'usersc/user_settings.php');
-  }
-}
+if(isset($user) && $user->isLoggedIn()){}
 
 ?>
+<!-- Hero Banner Welcome Section -->
+<header id="hero-section"class="jumbotron jumbotron-fluid hero">
+  <div class="container-fluid text-center">
+   <h3>WELCOME</h3>
+   <h1 class="display-3">FBI NCA</h1>
+   <h3 class="lead pb-4">To CPPS University</h3>
+   <a href="#" id="link_about" class="btn btn-md" role="button">About Us</a>
+   <a href="#" id="tier2_link" class="btn btn-md" role="button">Tier 2 Courses</a>
+   <a href="#" id="tier3_link" class="btn btn-md" role="button">Tier 3 Courses</a>
+  </div>
+</header>
 
-<link rel="stylesheet" type="text/css" href="usersc/css/card-flip.css">
-<!-- <link rel="stylesheet" type="text/css" href="usersc/css/card.css"> -->
-
-<div class="container-fluid">
-    <div class="text-center">
-        <p class="welcomeTitle">WELCOME TO</p>
-        <img src="/usersc/images/universitylogo.png" alt="..." class="">
+<!-- About Us Section -->
+<div id="aboutus" class="row">
+  <div class="col-xl custom-col">
+    <div class="container">
+      <h2 class="display-4 text-center mt-5 mb-3">Who We Are?</h2>
+      <hr>
+      <p class="sec-description">CPPS is the leading developer and provider of scalable training and consulting solutions in the U.S. for Workplace Violence Prevention, Active Shooter Response, and International Travel Safety. CPPS has worked together with thousands of organizations large and small.</p>
     </div>
-</div>
-<div class="container-fluid descriptionBanner">
-    <div class="text-center">
-        <p class="descriptionContent">CPPS is the leading developer and provider of scalable training and consulting solutions in the U.S. for Workplace Violence Prevention, Active Shooter Response, and International Travel Safety. CPPS has worked together with thousands of organizations–large and small–to include over 50% of Fortune 100 corporations, over 1600 colleges and universities; 2000 hospitals and many of the largest non-profit/charitable organizations in the U.S.</p>
+    <div class="wrapper">
+      <div class="aboutcard">
+          <input type="checkbox" class="more" aria-hidden="true">
+          <div class="content">
+              <div class="front" style="background-image: url('/usersc/images/company.png')">
+                  <div class="inner">
+                      <h4>50% of Fortune 100 corporations</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="aboutcard">
+          <input type="checkbox" class="more" aria-hidden="true">
+          <div class="content">
+              <div class="front" style="background-image: url('/usersc/images/university.png')">
+                  <div class="inner">
+                      <h4>1600 colleges and universities</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="aboutcard">
+          <input type="checkbox" class="more" aria-hidden="true">
+          <div class="content">
+              <div class="front" style="background-image: url('/usersc/images/hospital.png')">
+                  <div class="inner">
+                      <h4>2000 hospitals & many non-profit organizations</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
-</div>
-<br>
-
-<div class="wrapper">
-  <?php
-
-    // -- card_flip
-    //Include the When Lightning Strikes Module
-    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/WLS_Module.php';
-
-    //Include the FPDP Module
-    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/FP_Module.php';
-
-    //Include the Safe Passage Module
-    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/SafePassage_Module.php';
-
-    //Include the Tier 2 Module
-    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/Tier2_Module.php';
-
-    //Include the Tier 3 Module
-    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/Tier3_Module.php';
-
-    //Include the Beyond Lockdown Module
-    include $abs_us_root.$us_url_root.'usersc/modules/card_flip/BL_Module.php';
-
-  ?>
+    <div class="text-center">
+      <a href="#" id="sec_tier2_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-down"></i></a>
+    </div>
+  </div>
 </div>
 
-<!-- footers -->
+<!-- Tier 2 Course Modules -->
+<div id="t2course" class="row">
+  <div class="col-xl custom-col">
+    <div class="container">
+      <h2 class="display-4 text-center mt-5 mb-3">TIER 2 MODULES</h2>
+      <hr>
+      <p class="sec-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="wrapper">
+      <?php
+          // -- card_flip
+          //Include the Tier 2 Module 1
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier2/T2M1_Module.php';
+
+          //Include the Tier 2 Module 2
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier2/T2M2_Module.php';
+
+          //Include the Tier 2 Module 3
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier2/T2M3_Module.php';
+
+          //Include the Tier 2 Module 4
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier2/T2M4_Module.php';
+
+          //Include the Tier 2 Module 5
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier2/T2M5_Module.php';
+       ?>
+    </div>
+    <div class="text-center">
+      <a href="#" id="sec_tier3_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-down"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Tier 3 Course Modules -->
+<div id="t3course" class="row">
+  <div class="col-xl custom-col">
+    <div class="container">
+      <h2 class="display-4 text-center mt-5 mb-3">TIER 3 MODULES</h2>
+      <hr>
+      <p class="sec-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="wrapper">
+      <?php
+          // -- card_flip
+          //Include the Tier 3 Module 1
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier3/T3M1_Module.php';
+
+          //Include the Tier 3 Module 2
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier3/T3M2_Module.php';
+
+          //Include the Tier 3 Module 3
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier3/T3M3_Module.php';
+
+          //Include the Tier 3 Module 4
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier3/T3M4_Module.php';
+
+          //Include the Tier 3 Module 5
+          include $abs_us_root.$us_url_root.'usersc/modules/Tier3/T3M5_Module.php';
+       ?>
+    </div>
+    <div class="text-center">
+      <a href="#" id="to_top_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-up"></i></a>
+    </div>
+  </div>
+</div>
+
 <?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>
-
-<!-- Place any per-page javascript here -->
 <?php require_once $abs_us_root.$us_url_root.'users/includes/html_footer.php'; // currently just the closing /body and /html ?>

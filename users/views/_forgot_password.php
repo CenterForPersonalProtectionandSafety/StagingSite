@@ -19,25 +19,21 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<div class="row">
-	<div class="col-sm-12">
-		<h1>Password Reset</h1>
-		<ol>
-			<li>Enter your email address and click Reset</li>
-			<li>Check your email and click the link that is sent to you.</li>
-			<li>Follow the on screen instructions</li>
-		</ol>
+		<div class="w3-center"><br>
+			<h1>Password Reset</h1>
+
+				<p>Enter your email address and click Reset</p>
+				<p>Check your email and click the link that is sent to you.</p>
+				<p>Follow the on screen instructions</p>
+
+		</div>
+
 		<?php if(!$errors=='') {?><div class="alert alert-danger"><?=display_errors($errors);?></div><?php } ?>
-		<form action="forgot_password.php" method="post" class="form ">
 
-			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="text" name="email" placeholder="Email" class="form-control" autofocus autocomplete='email'>
-			</div>
 
+		<form action="forgot_password.php" method="post" class="w3-container">
+			<label for="email">Email</label>
+			<input type="text" name="email" placeholder="Email" class="w3-input w3-border" autofocus autocomplete='email'>
 			<input type="hidden" name="csrf" value="<?=Token::generate();?>">
-			<p><input type="submit" name="forgotten_password" value="Reset" class="btn btn-primary"></p>
+			<p><input type="submit" name="forgotten_password" value="Reset" class="w3-button w3-block w3-dark-grey w3-section w3-padding"></p>
 		</form>
-
-	</div><!-- /.col -->
-</div><!-- /.row -->

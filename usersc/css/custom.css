@@ -1,236 +1,203 @@
+/********************** DEFAULT **********************/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  /* vertical-align: baseline;
+  background: transparent; */
+}
 body {
-    /*background-color: #00315c;*/
-    background-color: white;
-}
-
-.moduleButton {
-    font-family: Arial;
-    color: #ffffff;
-    font-size: 15px;
-    background: #00315c;
-    padding: 6px 12px 6px 12px;
-    text-decoration: none;
-}
-
-.moduleButton:hover {
-    background: #3085ba;
-    text-decoration: none;
-    color: white;
-}
-
-.moduleButton:focus {
-    background: #3085ba;
-    text-decoration: none;
-    color: white;
-}
-
-.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
-    background-color: #00315c !important;
-}
-
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-    background-color: #3085ba !important;
-}
-
-.logintopspace {
-    margin-bottom: 64px;
-}
-
-.loginbottomspace {
-    margin-bottom: 136px;
-}
-
-.joinbottomspace {
-    margin-bottom: 64px;
-}
-
-.jointopspace {
-    margin-bottom: 32px;
-}
-
-.welcomeTitle {
-    font-size: 22px;
-    margin-bottom: 0px;
-    font-weight: 500;
-}
-
-.descriptionBanner {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    background-color: #551503;
-}
-
-.moduleColorOdd {
-    padding-top: 32px;
-    padding-bottom: 32px;
-    background-color: white;
-}
-
-.moduleColorEven {
-    padding-top: 32px;
-    padding-bottom: 32px;
-    background-color: #f3f3f3;
-}
-
-.descriptionContent {
-    margin-top: 16px;
-    margin-bottom: 10px;
-    color: white;
-}
-
-.playdescription {
-    padding-left: 380px;
-    padding-right: 380px;
-    font-size: 18px;
-    color: black;
-    margin-bottom: 32px;
-    text-align: justify;
-}
-
-.viewcoursep {
-    margin-top: 64px;
-    margin-bottom: 64px;
-}
-
-.tier2banner {
-    background: url(/usersc/images/tier2_banner.jpg) no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-    height: 505px;
-    margin-bottom: 0;
-}
-
-.tier3banner {
-    background: url(/usersc/images/tier3banner.jpg) no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-    height: 505px;
-    margin-bottom: 0;
-}
-
-.wlsbanner {
-    background: url(/usersc/images/wls_banner.jpg) no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-    height: 505px;
-    margin-bottom: 0;
-}
-
-.blbanner {
-    background: url(/usersc/images/bl_banner.jpg) no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-    height: 505px;
-    margin-bottom: 0;
-}
-
-.modulePage {
-    padding-top: 0 !important;
-}
-
-.pageTitle {
-    margin-top:240px;
-    font-weight: 600;
-    font-size: 32px !important;
-    margin-bottom: 0;
-    color: white !important;
-}
-
-.pageTitleRow1 {
-    font-weight: 600;
-    font-size: 83px !important;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: white !important;
-}
-
-.pageTitleRow2 {
-    font-weight: 600;
-    font-size: 83px !important;
-    margin-top: -16px;
-    margin-bottom: 0;
-    color: white !important;
-}
-
-.indexbarplay {
-    padding-top: 32px;
-    padding-bottom: 32px;
-    background-color: white;
-}
-
-.managercheck {
-    margin-top: 0;
-    margin-bottom: 32px;
-}
-
-
-/* ---- usersc/login.php ---- */
-
-.login-logo {
-    width: 300px;
-    height: auto;
-}
-
-.forgot-password-row {
-    margin-bottom: 70px;
-}
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
-
-}
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px) {
-
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-    #login-row {
-        padding-left: 140px;
-        padding-right: 140px;
-    }
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 992px) {
-    #login-row {
-        padding-left: 250px;
-        padding-right: 250px;
-    }
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-    #login-row {
-        padding-left: 350px;
-        padding-right: 350px;
-    }
-}
-
-html {
+  /* min-height: 100vh; */
   position: relative;
-  min-height: 100%;
+}
+html, body {
+  /* height: 100%; */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/********************** DEFAULT END **********************/
+
+/********************** NAVBAR **********************/
+.navbar {
+	background: #444;
+	-o-transition: all .6s; -moz-transition: all .6s; -webkit-transition: all .6s; -ms-transition: all .6s; transition: all .6s;
+	backface-visibility: hidden;
+}
+/* .navbar.navbar-no-bg { background: #444; background: rgba(0, 0, 0, 0.3); } */
+
+.navbar-dark .navbar-nav { font-size: 15px; color: #fff; font-weight: 600; }
+.navbar-dark .navbar-nav .nav-link { color: #fff; color: rgba(255, 255, 255, 0.8); border: 0; }
+.navbar-dark .navbar-nav .nav-link:hover { color: #fff; }
+.navbar-dark .navbar-nav .nav-link:focus { color: #fff; outline: 0; }
+
+.navbar-expand-md .navbar-nav .nav-link { padding-left: 1rem; padding-right: 1rem; }
+
+.fixed-top.scrolled {
+  background-color: #343A40 !important;
+  transition: background-color 500ms linear;
+}
+/********************** NAVBAR END **********************/
+
+/********************** HERO SECTION END **********************/
+.hero{
+  font-family: 'Cinzel', serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../images/fbi_hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-bottom: 0px;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.hero h1 {
+    font-size: 8em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
 }
-.footer {
+.hero h3 {
+    font-size: 2em;
+}
+
+.btn {
+  display: inline-block;
+  width: 200px;
+  padding: .2em;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #fff;
+  border-radius: 20px;
+}
+.btn:hover {
+  background-color: #fff;
+  color:rgba(0,0,0,1);
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #fff;
+}
+.container-fluid {
+  font-size: 12px;
+}
+/********************** HERO SECTION END **********************/
+
+/********************** SECTIONS **********************/
+.custom-col {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.row:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+.sec-btn {
+  display: inline-block;
+  width: 100px;
+  padding: .2em;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #343A40;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #343A40;
+  border-radius: 20px;
+ }
+.sec-btn:hover {
+  background-color: #343A40;
+  color:white;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #fff;
+}
+.sec-description{
+  font-size: 1em;
+  text-align: center;
+}
+/********************** SECTIONS END **********************/
+
+/********************** VIEW PAGES **********************/
+.view-page-logo {
+  padding-bottom: 2em;
+}
+.view-custom{
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 450px) {
+  .view-page-text{
+    font-size: 15px;
+  }
+}
+/********************** VIEW PAGES END **********************/
+
+/********************** USER SETTINGS UPDATE **********************/
+.settings-hero{
+  width: 100%;
+  display: flex;
+  text-align: left;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 6em;
+  padding-bottom: 6em;
+  background-color: #f9f9f9;
+  margin: 0;
+  height: 94vh;
+  overflow: hidden
+}
+
+.settings-hero label {
+    font-size: 1.5em;
+}
+
+.settings-hero h1 {
+    font-size: 5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: #343A40;
+}
+.settings-hero h3 {
+    font-size: 2em;
+}
+
+@media only screen and (max-width: 832px) {
+  .settings-hero h1{
+    font-size: 30px;
+  }
+  .settings-hero label{
+    font-size: 16px;
+  }
+  .settings-hero .sec-btn{
+    margin-top: 1em;
+  }
+}
+/********************** USER SETTINGS UPDATE END **********************/
+
+/********************** FOOTER **********************/
+.login-footer {
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  background-color: #343A40;
+  text-align: center;
+}
+.logout-footer{
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #00315c;
+  line-height: 60px;
+  color: white;
+  text-align: center;
 }
+/********************** FOOTER END**********************/

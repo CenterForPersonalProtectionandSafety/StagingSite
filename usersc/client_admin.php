@@ -47,7 +47,8 @@ ini_set('memory_limit','1024M');
     return $path;
   }
 
-  if (checkMenu(2,$user->data()->id) || checkMenu(5,$user->data()->id)){
+  // Add checkMenu(X,$user->data()->id) ||  with proper permission id value
+  if (checkMenu(2,$user->data()->id) || checkMenu(3,$user->data()->id)){
 
   //$view = Input::get('view');
   include($abs_us_root.$us_url_root.'usersc/includes/admin_override.php');
@@ -56,34 +57,56 @@ ini_set('memory_limit','1024M');
       $path = usView('_learners_list.php');
       include($path);
       break;
-    case "user":
-      $path = usView('_admin_user.php');
+    // case "user":
+    //   $path = usView('_admin_user.php');
+    //   include($path);
+    //   break;
+    // case "users":
+    //   $path = usView('_admin_users.php');
+    //   include($path);
+    //   break;
+    case "t2m1":
+      $path = usView('_t2m1_list.php');
       include($path);
       break;
-    case "users":
-      $path = usView('_admin_users.php');
+    case "t2m2":
+      $path = usView('_t2m2_list.php');
       include($path);
       break;
-    case "upload":
-      $path = usView('_user_upload.php');
+    case "t2m3":
+      $path = usView('_t2m3_list.php');
       include($path);
       break;
-    case "bl":
-      $path = usView('_bl_list.php');
+    case "t2m4":
+      $path = usView('_t2m4_list.php');
       include($path);
       break;
-    case "wls":
-      $path = usView('_wls_list.php');
+    case "t2m5":
+      $path = usView('_t2m4_list.php');
       include($path);
       break;
-    case "tier2":
-      $path = usView('_tier2_list.php');
+    case "t3m1":
+      $path = usView('_t3m1_list.php');
       include($path);
       break;
-    case "tier3":
-      $path = usView('_tier3_list.php');
+    case "t3m2":
+      $path = usView('_t3m2_list.php');
       include($path);
       break;
+    case "t3m3":
+      $path = usView('_t3m3_list.php');
+      include($path);
+      break;
+    case "t3m4":
+      $path = usView('_t3m4_list.php');
+      include($path);
+      break;
+    case "t3m5":
+      $path = usView('_t3m4_list.php');
+      include($path);
+      break;
+
+
     default:
     if($view == ''){
     include($abs_us_root.$us_url_root.'usersc/views/_admin_dashboard.php');

@@ -9,7 +9,7 @@ ini_set("allow_url_fopen", 1);
 ?>
 <?php require_once '../users/init.php';?>
 <?php require_once $abs_us_root.$us_url_root.'users/includes/header.php'; ?>
-<?php require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
+<?php
 use PragmaRX\Google2FA\Google2FA;
 if($settings->twofa == 1){
 $google2fa = new Google2FA();
@@ -259,25 +259,60 @@ if(Input::exists()){
 
 ?>
 <?php header('X-Frame-Options: DENY'); ?>
-<div id="page-wrapper">
-<div class="container">
-<?php
-if($settings->registration==1) {
-  if($settings->glogin==1 && !$user->isLoggedIn()){
-    require_once $abs_us_root.$us_url_root.'users/includes/google_oauth_login.php';
-  }
-  if($settings->fblogin==1 && !$user->isLoggedIn()){
-    require_once $abs_us_root.$us_url_root.'users/includes/facebook_oauth.php';
-  }
-  require $abs_us_root.$us_url_root.'users/views/_join.php';
-}
-else {
-  require $abs_us_root.$us_url_root.'users/views/_joinDisabled.php';
-}
-?>
 
-</div>
-</div>
+
+
+
+
+<!-- ************************************************** HTML STARTS HERE  ************************************************************** -->
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/logged_out.css">
+<script type="text/javascript">
+  $(document).ready(function(){
+      document.getElementById('joinModal').style.display='block'
+    });
+</script>
+
+
+
+<div class="w3-container">
+  <div id="joinModal" class="w3-modal join" data-keyboard="false" data-backdrop="static">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:1100px">
+
+      <div class="w3-center"><br>
+        <img src="/usersc/images/cppslogo.png" class="w3-image" style="width:100%;max-width:300px">
+      </div>
+
+      <?php
+      if($settings->registration==1) {
+        require $abs_us_root.$us_url_root.'users/views/_join.php';
+      }
+      else {
+        require $abs_us_root.$us_url_root.'users/views/_joinDisabled.php';
+      }
+      ?>
+
+        <div class="w3-bar">
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>users/login.php'"><i class="fa fa-sign-in"></i> Login</button>
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
+          <!-- <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>users/join.php'"><i class="fa fa-user-plus"></i> Register</button> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+  $('document').ready(function()
+  {
+      $('textarea').each(function(){
+              $(this).val($(this).val().trim());
+          }
+      );
+  });
+</script>
 
 <!-- footers -->
 <?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>

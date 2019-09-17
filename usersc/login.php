@@ -10,7 +10,7 @@ if(isset($_SESSION)){session_destroy();}
 ?>
 <?php require_once '../users/init.php';?>
 <?php require_once $abs_us_root.$us_url_root.'users/includes/header.php'; ?>
-<?php require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
+<?php
 if($settings->twofa == 1){
     $google2fa = new PragmaRX\Google2FA\Google2FA();
 }
@@ -115,71 +115,58 @@ if (empty($dest = sanitizedDest('dest'))) {
 
 ?>
 
-<div id="page-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <?php if(!$error_message=='') {?><div class="alert alert-danger"><?=$error_message;?></div><?php } ?>
-                <?php
+<!-- ************************************************** HTML STARTS HERE  ************************************************************** -->
 
-                if($settings->glogin==1 && !$user->isLoggedIn()){
-                    require_once $abs_us_root.$us_url_root.'users/includes/google_oauth_login.php';
-                }
-                if($settings->fblogin==1 && !$user->isLoggedIn()){
-                    require_once $abs_us_root.$us_url_root.'users/includes/facebook_oauth.php';
-                }
-                ?>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/logged_out.css">
+<script type="text/javascript">
+  $(document).ready(function(){
+      document.getElementById('loginModal').style.display='block'
+    });
+</script>
 
-                <div class="logintopspace"></div>
-                <div class="text-center">
-                    <img src="/usersc/images/universitylogo.png" alt="..." class="login-logo">
-                </div>
-            </div>
+
+
+<div class="w3-container">
+  <div id="loginModal" class="w3-modal" data-keyboard="false" data-backdrop="static">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+        <img src="/usersc/images/cppslogo.png" alt="Avatar" style="width:50%" class=" w3-margin-top">
+      </div>
+
+      <form name="login" id="login-form" class="w3-container" action="login.php" method="post">
+        <div class="w3-section">
+
+          <input type="hidden" name="dest" value="<?= $dest ?>" />
+
+          <label for="username" >Email</label>
+          <input  class="w3-input w3-border w3-margin-bottom" type="text" name="username" id="username" placeholder="Email" required autofocus>
+
+          <label for="password">Password</label>
+          <input type="password" class="w3-input w3-border"  name="password" id="password"  placeholder="Password" required autocomplete="off">
+
+          <!-- <label for="remember">
+          <input type="checkbox" name="remember" id="remember" > Remember Me</label> -->
+
+          <input type="hidden" name="csrf" value="<?=Token::generate(); ?>">
+          <input type="hidden" name="redirect" value="<?=Input::get('redirect')?>" />
+          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" id="next_button" type="submit"><i class="fa fa-sign-in"></i> <?=lang("SIGNIN_BUTTONTEXT","");?></button>
         </div>
-    <div class="row" id="login-row">
-        <div class="col-xs-12">
-            <form name="login" id="login-form" class="form-signin" action="login.php" method="post">
-                    <h2 class="form-signin-heading"></i> <?=lang("SIGNIN_TITLE","");?></h2>
-                <input type="hidden" name="dest" value="<?= $dest ?>" />
+      </form>
 
-                <div class="form-group">
-                    <label for="username" >Email</label>
-                    <input  class="form-control" type="text" name="username" id="username" placeholder="Email" required autofocus>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control"  name="password" id="password"  placeholder="Password" required autocomplete="off">
-                </div>
-                <?php
-                    if($settings->recaptcha == 1){
-                ?>
-                <div class="g-recaptcha" data-sitekey="<?=$settings->recap_public; ?>" data-bind="next_button" data-callback="submitForm"></div>
-                <?php } ?>
-
-                <div class="form-group">
-                    <label for="remember">
-                        <input type="checkbox" name="remember" id="remember" > Remember Me</label>
-                </div>
-
-                <input type="hidden" name="csrf" value="<?=Token::generate(); ?>">
-                <input type="hidden" name="redirect" value="<?=Input::get('redirect')?>" />
-                <button class="submit  btn  btn-primary" id="next_button" type="submit"><i class="fa fa-sign-in"></i> <?=lang("SIGNIN_BUTTONTEXT","");?></button>
-
-            </form>
+        <div class="w3-bar">
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>users/login.php'"><i class="fa fa-sign-in"></i> Login</button>
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
+          <!-- <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>users/join.php'"><i class="fa fa-user-plus"></i> Register</button> -->
         </div>
+
+      </div>
     </div>
-    <div class="row forgot-password-row" id="login-row">
-        <div class="col-xs-6"><br>
-            <a class="pull-left" href='../users/forgot_password.php'><i class="fa fa-wrench"></i><?=lang("SIGNIN_FORGOTPASS","");?></a><br><br>
-        </div>
-        <?php if($settings->registration==1) {?>
-        <div class="col-xs-6"><br>
-            <a class="pull-right" href='../users/join.php'><i class="fa fa-plus-square"></i> <?=lang("SIGNUP_TEXT","");?></a><br><br>
-        </div><?php } ?>
-    </div>
-    </div>
-</div>
+  </div>
+
+
+
 
 <!-- footers -->
 <?php require_once $abs_us_root.$us_url_root.'users/includes/page_footer.php'; // the final html footer copyright row + the external js calls ?>

@@ -1,28 +1,5 @@
-<?php
-/*
-This is a user-facing page
-UserSpice 4
-An Open Source PHP User Management System
-by the UserSpice Team at http://UserSpice.com
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Special thanks to John Bovey for the password strenth feature.
-*/
-?>
-<div class="row">
-  <div class="col-sm-12">
     <?php
     if (!$form_valid && Input::exists()){?>
       <?php if(!$validation->errors()=='') {?><div class="alert alert-danger"><?=display_errors($validation->errors());?></div><?php } ?>
@@ -30,24 +7,24 @@ Special thanks to John Bovey for the password strenth feature.
     includeHook($hooks,'body');
     ?>
 
-    <form class="form-signup" action="<?=$form_action;?>" method="<?=$form_method;?>">
+    <form class="w3-container" action="<?=$form_action;?>" method="<?=$form_method;?>">
 
-      <h2 class="form-signin-heading"> <?=lang("SIGNUP_TEXT","");?></h2>
-
-      <div class="form-group">
+      <!-- <div class="w3-center">
+        <h2 class="form-signin-heading"> <?=lang("SIGNUP_TEXT","");?></h2>
+      </div> -->
 
         <?php if($settings->auto_assign_un==0) {?><label><?=lang("GEN_UNAME");?>*</label>&nbsp;&nbsp;<span id="usernameCheck" class="small"></span>
-        <input type="text" class="form-control" id="username" name="username" placeholder="<?=lang("GEN_UNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $username;} ?>" required autofocus autocomplete="username"><?php } ?>
+        <input type="text" class="w3-input w3-border" id="username" name="username" placeholder="<?=lang("GEN_UNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $username;} ?>" required autofocus autocomplete="username"><?php } ?>
 
 
         <label for="fname"><?=lang("GEN_FNAME");?>*</label>
-        <input type="text" class="form-control" id="fname" name="fname" placeholder="<?=lang("GEN_FNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $fname;} ?>" required autofocus autocomplete="first-name">
+        <input type="text" class="w3-input w3-border" id="fname" name="fname" placeholder="<?=lang("GEN_FNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $fname;} ?>" required autofocus autocomplete="first-name">
 
         <label for="lname"><?=lang("GEN_LNAME");?>*</label>
-        <input type="text" class="form-control" id="lname" name="lname" placeholder="<?=lang("GEN_LNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $lname;} ?>" required autocomplete="family-name">
+        <input type="text" class="w3-input w3-border" id="lname" name="lname" placeholder="<?=lang("GEN_LNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $lname;} ?>" required autocomplete="family-name">
 
         <label for="email"><?=lang("GEN_EMAIL");?>*</label>
-        <input  class="form-control" type="text" name="email" id="email" placeholder="<?=lang("GEN_EMAIL");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $email;} ?>" required autocomplete="email">
+        <input  class="w3-input w3-border" type="text" name="email" id="email" placeholder="<?=lang("GEN_EMAIL");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $email;} ?>" required autocomplete="email">
 
         <?php
 
@@ -74,17 +51,17 @@ Special thanks to John Bovey for the password strenth feature.
 
 
         //2.) Apply default class to gray out green check icon
-        echo '
-        <style>
-        .gray_out_icon{
-          -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-          filter: grayscale(100%);
-        }
-        .gray_out_text{
-          opacity: .5;
-        }
-        </style>
-        ';
+        // echo '
+        // <style>
+        // .gray_out_icon{
+        //   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        //   filter: grayscale(100%);
+        // }
+        // .gray_out_text{
+        //   opacity: .5;
+        // }
+        // </style>
+        // ';
 
         //3.) Javascript to check to see if user has met conditions on keyup (NOTE: It seems like we shouldn't have to include jquery here because it's already included by UserSpice, but the code doesn't work without it.)
         echo '
@@ -142,31 +119,14 @@ Special thanks to John Bovey for the password strenth feature.
 
         ?>
 
-        <div style="display: inline-block">
-          <label for="password"><?=lang("GEN_PASS");?>* (<?=lang("GEN_MIN");?> <?=$settings->min_pw?> <?=lang("GEN_AND");?> <?=lang("GEN_MAX");?> <?=$settings->max_pw?> <?=lang("GEN_CHAR");?>)</label>
-          <input  class="form-control" type="password" name="password" id="password" placeholder="<?=lang("GEN_PASS");?>" required autocomplete="password" aria-describedby="passwordhelp">
+
+          <label for="password"><?=lang("GEN_PASS");?>* (Between 6 & 20 Characters. Must include number and capital letter.)</label>
+          <input  class="w3-input w3-border" type="password" name="password" id="password" placeholder="<?=lang("GEN_PASS");?>" required autocomplete="password" aria-describedby="passwordhelp">
 
           <label for="confirm"><?=lang("PW_CONF");?>*</label>
-          <input  type="password" id="confirm" name="confirm" class="form-control" placeholder="<?=lang("PW_CONF");?>" required autocomplete="password" >
-        </div>
-        <div style="display: inline-block; padding-left: 20px">
-          <strong><?=lang("PW_SHOULD");?></strong><br>
-          <span id="character_range_icon" class="fa fa-thumbs-o-up gray_out_icon" style="color: green"></span>&nbsp;&nbsp;<?php echo $character_statement;?>
-          <br>
-          <?php
-          if ($settings->req_cap == 1){ ?>
-            <span id="num_caps_icon" class="fa fa-thumbs-o-up gray_out_icon" style="color: green"></span>&nbsp;&nbsp;<?php echo $num_caps_statement;?>
-            <br>
-          <?php }
+          <input  type="password" id="confirm" name="confirm" class="w3-input w3-border" placeholder="<?=lang("PW_CONF");?>" required autocomplete="password" >
 
-          if ($settings->req_num == 1){ ?>
-            <span id="num_numbers_icon" class="fa fa-thumbs-o-up gray_out_icon" style="color: green"></span>&nbsp;&nbsp;<?php echo $num_numbers_statement;?>
-            <br>
-          <?php } ?>
-          <span id="password_match_icon" class="fa fa-thumbs-o-up gray_out_icon" style="color: green"></span>&nbsp;&nbsp;<?php echo $password_match_statement;?>
-          <br><br>
-          <a class="nounderline" id="password_view_control"><span class="fa fa-eye"></span> <?=lang("PW_SHOWS");?></a>
-        </div>
+
         <br><br>
 
         <?php
@@ -174,7 +134,7 @@ Special thanks to John Bovey for the password strenth feature.
         include($abs_us_root.$us_url_root.'usersc/scripts/additional_join_form_fields.php'); ?>
         <?php if($settings->show_tos == 1){ ?>
           <label for="confirm"> <?=lang("JOIN_TC");?></label>
-          <textarea id="agreement" name="agreement" rows="5" class="form-control" style="background-color:white;" disabled >
+          <textarea id="agreement" name="agreement" rows="4" class="form-control" style="background-color:white;" disabled >
             <?php
             if(!isset($_SESSION['us_lang']) || $_SESSION['us_lang'] == 'en-US' || $_SESSION['us_lang'] == '' ){
             require $abs_us_root.$us_url_root.'usersc/includes/user_agreement.php';
@@ -190,13 +150,11 @@ Special thanks to John Bovey for the password strenth feature.
 
           <label><input type="checkbox" id="agreement_checkbox" name="agreement_checkbox"> <?=lang("JOIN_ACCEPTTC");?></label>
         <?php } //if TOS enabled ?>
-      </div>
+
 
       <input type="hidden" value="<?=Token::generate();?>" name="csrf">
-      <button class="submit btn btn-primary " type="submit" id="next_button"><i class="fa fa-plus-square"></i> <?=lang("SIGNUP_TEXT");?></button>
+      <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" id="next_button"><i class="fa fa-user-plus"></i> <?=lang("SIGNUP_TEXT");?></button>
       <?php if($settings->recaptcha == 1|| $settings->recaptcha == 2){ ?>
         <div class="g-recaptcha" data-sitekey="<?=$settings->recap_public; ?>" data-bind="next_button" data-callback="submitForm"></div>
       <?php } ?>
-    </form><br />
-  </div>
-</div>
+    </form>

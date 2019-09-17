@@ -147,7 +147,7 @@ if (!empty($_POST)) {
           $perm = Input::get('perm');
           $addNewPermission = array('user_id' => $theNewId, 'permission_id' => 1);
           $db->insert('user_permission_matches',$addNewPermission);
-          include($abs_us_root.$us_url_root.'usersc/scripts/during_user_creation.php');
+          // include($abs_us_root.$us_url_root.'usersc/scripts/during_user_creation.php');
           if(isset($_POST['sendEmail'])) {
             $userDetails = fetchUserDetails(NULL, NULL, $theNewId);
             $params = array(
@@ -166,8 +166,9 @@ if (!empty($_POST)) {
             email($to,$subject,$body);
           }
           logger($user->data()->id,"User Manager","Added user $username.");
-          //Redirect::to($us_url_root.'users/admin.php?view=user&id='.$theNewId);
-          Redirect::to($us_url_root.'/index.php');
+          Redirect::to($us_url_root.'users/admin.php?view=user&id='.$theNewId);
+          // Redirect::to($us_url_root);
+          // Redirect::to($us_url_root.'users/logout.php');
         } catch (Exception $e) {
           die($e->getMessage());
         }

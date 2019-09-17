@@ -191,7 +191,8 @@ if (!empty($_POST)) {
     $random_password = random_password();
   ?>
 
-  <?php if (checkMenu(5,$user->data()->id) || checkMenu(2,$user->data()->id)){ ?>
+  <!--  Add checkMenu(X,$user->data()->id) ||  with proper permission id value-->
+  <?php if (checkMenu(2,$user->data()->id) || checkMenu(3,$user->data()->id)){ ?>
 
   <div class="container">
     <h2>Manage User Permissions</h2>
@@ -215,7 +216,6 @@ if (!empty($_POST)) {
             ?>
             <tr>
               <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->id?></a></td>
-
               <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->username?></a></td>
               <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->fname?> <?=$v1->lname?></a></td>
               <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->email?></a></td>

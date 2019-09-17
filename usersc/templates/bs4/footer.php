@@ -27,7 +27,7 @@ $(document).ready(function(){
 // ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 </script>
 
-<div class="container">
+<!-- <div class="container">
         <div class="row">
                 <div class="col-12 text-center">
                         <footer><br>&copy;
@@ -36,5 +36,6 @@ $(document).ready(function(){
                         <br>
                 </div>
         </div>
-</div>
+</div> -->
+
 <?php require_once($abs_us_root.$us_url_root.'users/includes/html_footer.php');?>

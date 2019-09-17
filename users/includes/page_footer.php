@@ -31,7 +31,7 @@ if($settings->force_notif == 1 && $not > 0 && $currentPage != 'admin_verify.php'
 <?php }
 }?>
 <?php if($user->isLoggedIn() && $settings->session_manager==1) {?>
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
 				setInterval(function(){
             $.ajax({

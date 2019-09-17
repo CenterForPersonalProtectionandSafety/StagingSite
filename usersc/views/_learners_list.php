@@ -35,10 +35,6 @@
                       <input type="submit" name="Export" class="btn btn-success" value="Export to CSV"/>
                     </form>
 
-                    <form class="" action="/usersc/email_test.php" method="post" name="test_email" enctype="multipart/form-data">
-                      <input type="submit" name="Email" class="btn btn-success" value="Email Test"/>
-                    </form>
-
                   <div class="row">
                       <div class="col-xs-12">
                           <div class="alluinfo">&nbsp;</div>
@@ -48,9 +44,16 @@
                                       <tr>
                                           <th>Name</th><th>Email</th>
                                           <th>Last Sign In</th>
-                                          <th>OAE</th>
-                                          <th>OS</th>
-                                          <th>OTT</th>
+                                          <th>T2M1</th>
+                                          <th>T2M2</th>
+                                          <th>T2M3</th>
+                                          <th>T2M4</th>
+                                          <th>T2M5</th>
+                                          <th>T3M1</th>
+                                          <th>T3M2</th>
+                                          <th>T3M3</th>
+                                          <th>T3M4</th>
+                                          <th>T3M5</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -62,9 +65,16 @@
                                           <td><?=$v1->fname?> <?=$v1->lname?></td>
                                           <td><?=$v1->email?></td>
                                           <td><?php if($v1->last_login != 0) { echo $v1->last_login; } else {?> <i>Never</i> <?php }?></td>
-                                          <td><?php if($v1->complete_oae==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                          <td><?php if($v1->complete_os==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                          <td><?php if($v1->complete_ott==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t2m1==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t2m2==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t2m3==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t2m4==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t2m5==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t3m1==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t3m2==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t3m3==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t3m4==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_t3m5==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
                                       </tr>
                                       <?php } ?>
                                   </tbody>
