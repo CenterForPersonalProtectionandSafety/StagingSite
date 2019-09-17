@@ -45,7 +45,7 @@ if($settings->navigation_type==0) {
               <?php } else {exit;} // if user is logged in ?>
 
               <!--  Add checkMenu(X,$user->data()->id) ||  with proper permission id value-->
-              <?php if(checkMenu(2,$user->data()->id) || checkMenu(3,$user->data()->id)){  //Links for permission level X (Admin) ?>
+              <?php if(checkMenu(3,$user->data()->id)){  //Links for permission level X (Admin) ?>
                 <a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php"><i class="fa fa-lock" aria-hidden="true"></i> Manager Dashboard</a>
                 <!-- <a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php?view=users"><i class="fa fa-users"></i> Manage Users</a> -->
                 <a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php?view=learner"><i class="fa fa-file-text"></i> Learners List</a>

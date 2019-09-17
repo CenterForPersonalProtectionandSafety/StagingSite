@@ -48,7 +48,7 @@ ini_set('memory_limit','1024M');
   }
 
   // Add checkMenu(X,$user->data()->id) ||  with proper permission id value
-  if (checkMenu(2,$user->data()->id) || checkMenu(3,$user->data()->id)){
+  if (checkMenu(3,$user->data()->id)){
 
   //$view = Input::get('view');
   include($abs_us_root.$us_url_root.'usersc/includes/admin_override.php');

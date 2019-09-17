@@ -192,7 +192,7 @@ if (!empty($_POST)) {
   ?>
 
   <!--  Add checkMenu(X,$user->data()->id) ||  with proper permission id value-->
-  <?php if (checkMenu(2,$user->data()->id) || checkMenu(3,$user->data()->id)){ ?>
+  <?php if (checkMenu(3,$user->data()->id)){ ?>
 
   <div class="container">
     <h2>Manage User Permissions</h2>

@@ -27,7 +27,7 @@
 
         <!-- regular user menu link -->
 
-          <?php if (checkMenu(2,$user->data()->id)){  //Links for permission level 2 (default admin) ?>
+          <?php //if (checkMenu(2,$user->data()->id)){  //Links for permission level 2 (default admin) ?>
         <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php"><i class="fa fa-fw fa-cogs"></i> Admin Dashboard</a>
         <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=users"><i class="fa fa-fw fa-user"></i> User Management</a>
         <a class="dropdown-item" href="<?=$us_url_root?>users/admin.php?view=permissions"><i class="fa fa-fw fa-lock"></i> Page Permissions</a>
