@@ -207,9 +207,10 @@ if (!empty($_POST)) {
                     if (empty($errors)) {
                         //process
                         $new_password_hash = password_hash(Input::get('password'), PASSWORD_BCRYPT, array('cost' => 12));
-                        $user->update(array('password' => $new_password_hash,'force_pr' => 0,'vericode' => randomstring(15),), $user->data()->id);
+                        $user->update(array('password' => $new_password_hash,'force_pr' => 0,'vericode' => randomstring(15), 'first_login_pass_reset' => 1,), $user->data()->id);
                         $successes[]='Password updated.';
                         logger($user->data()->id, "User", "Updated password.");
+                        Redirect::to('../index.php');
                     }
                 }
             } else {
@@ -232,6 +233,8 @@ $userdetails=$user2->data();
 
 		<?php if (!$errors=='') {?><div class="alert alert-danger"><?=display_errors($errors);?></div><?php } ?>
 		<?php if (!$successes=='') {?><div class="alert alert-success"><?=display_successes($successes);?></div><?php } ?>
+
+    <?php if ($user->data()->first_login_pass_reset == 0) {?><div class="alert alert-danger">Please Reset Password</div><?php } ?>
 
 		<form name='updateAccount' action='user_settings.php' method='post'>
 

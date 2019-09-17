@@ -6,6 +6,10 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 if (!securePage($_SERVER['PHP_SELF'])){die();}
 if(isset($user) && $user->isLoggedIn()){}
 
+if($user->data()->first_login_pass_reset == 0) {
+  Redirect::to($us_url_root.'usersc/user_settings.php');
+}
+
 ?>
 <!-- Hero Banner Welcome Section -->
 <header id="hero-section"class="jumbotron jumbotron-fluid hero">
