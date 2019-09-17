@@ -63,17 +63,48 @@ if (Input::get('forgotten_password')) {
               'vericode' => $vericode,
               'reset_vericode_expiry' => $settings->reset_vericode_expiry
             );
-
-            //Email content
-            $subject = lang("PW_RESET");
             $encoded_email=rawurlencode($email);
+
+            //Email Body
             $body =  email_body('_email_template_forgot_password.php',$options);
 
-            //Send email
+
+            $fname = $fuser->data()->fname;
+            $email = rawurlencode($email);
+            $reset_vericode_expiry = $settings->reset_vericode_expiry;
+
+            $mail = new PHPMailer;
+            $mail->isSMTP();
+            $mail->SMTPDebug = 0;
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port = 587;
+            $mail->SMTPSecure = 'tls';
+            $mail->SMTPAuth = true;
+            $mail->Username = "michael.arnold.cpps@gmail.com";
+            $mail->Password = "marnoldCPPSdev1!";
+            $mail->setFrom('michael.arnold.cpps@gmail.com', 'CPPS Admin');
+            $mail->addReplyTo('dontreplyto@example.com', 'First Last');
+
+            $mail->addAddress($email, $fname);
+            $mail->Subject = "Password Reset";
+            // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+            $mail->Body = $body;
+
+            function save_mail($mail)
+            {
+                $path = "{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail";
+                $imapStream = imap_open($path, $mail->Username, $mail->Password);
+                $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
+                imap_close($imapStream);
+                return $result;
+            }
+
             $email_sent=email($email,$subject,$body);
             logger($fuser->data()->id,"User","Requested password reset.");
-            if(!$email_sent){
-                $errors[] = lang("ERR_EMAIL");
+            if(!$mail->send()){
+                $errors[] = $mail->ErrorInfo;;
+            }else {
+              $email_sent = true;
             }
         }else{
             $errors[] = lang("ERR_EMAIL");
