@@ -35,6 +35,10 @@
                       <input type="submit" name="Export" class="btn btn-success" value="Export to CSV"/>
                     </form>
 
+                    <form class="" action="/usersc/email_test.php" method="post" name="email_test" enctype="multipart/form-data">
+                      <input type="submit" name="Email" class="btn btn-success" value="Email Test"/>
+                    </form>
+
                   <div class="row">
                       <div class="col-xs-12">
                           <div class="alluinfo">&nbsp;</div>
