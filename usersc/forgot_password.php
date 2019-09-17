@@ -99,7 +99,7 @@ if (Input::get('forgotten_password')) {
                 return $result;
             }
 
-            $email_sent=email($email,$subject,$body);
+            //$email_sent=email($email,$subject,$body);
             logger($fuser->data()->id,"User","Requested password reset.");
             if(!$mail->send()){
                 $errors[] = $mail->ErrorInfo;;
