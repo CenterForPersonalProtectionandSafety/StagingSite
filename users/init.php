@@ -28,7 +28,8 @@ $GLOBALS['config'] = array(
 'host'         => 'localhost',
 'username'     => 'root',
 'password'     => 'CPPSdev1!Staging',
-'db'           => 'cpps_staging',
+// 'db'           => 'cpps_staging',
+'db'           => 'cpps_fbi_backup',
 ),
 'remember'        => array(
   'cookie_name'   => 'pmqesoxiw318374csb',
