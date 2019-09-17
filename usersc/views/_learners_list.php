@@ -35,6 +35,10 @@
                       <input type="submit" name="Export" class="btn btn-success" value="Export to CSV"/>
                     </form>
 
+                    <form class="" action="/usersc/email_test.php" method="post" name="test_email" enctype="multipart/form-data">
+                      <input type="submit" name="Email" class="btn btn-success" value="Email Test"/>
+                    </form>
+
                   <div class="row">
                       <div class="col-xs-12">
                           <div class="alluinfo">&nbsp;</div>
@@ -44,10 +48,9 @@
                                       <tr>
                                           <th>Name</th><th>Email</th>
                                           <th>Last Sign In</th>
-                                          <th>WPV</th>
-                                          <th>EGML</th>
-                                          <th>WLS</th>
-                                          <th>BL</th>
+                                          <th>OAE</th>
+                                          <th>OS</th>
+                                          <th>OTT</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -59,10 +62,9 @@
                                           <td><?=$v1->fname?> <?=$v1->lname?></td>
                                           <td><?=$v1->email?></td>
                                           <td><?php if($v1->last_login != 0) { echo $v1->last_login; } else {?> <i>Never</i> <?php }?></td>
-                                          <td><?php if($v1->complete_tier2==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                          <td><?php if($v1->complete_tier3==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                          <td><?php if($v1->complete_wls==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-                                          <td><?php if($v1->complete_bl==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_oae==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_os==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+                                          <td><?php if($v1->complete_ott==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
                                       </tr>
                                       <?php } ?>
                                   </tbody>
