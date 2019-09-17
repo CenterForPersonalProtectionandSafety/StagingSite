@@ -155,7 +155,7 @@ if (!empty($_POST)) {
             <div class="col-sm-12">
               <div>
 
-                <?php if (checkMenu(2,$user->data()->id)){  ?>
+                <?php if (checkMenu(1,$user->data()->id)){  ?>
                   <div class="btn-group pull-left"><h3><?=lang("MSG_CONV");?> <a href="#" data-toggle="modal" class="nounderline" data-target="#settings"><i class="fa fa-cog"></i></a></h3></div>
                 <?php } ?>
                 <div class="btn-group pull-right"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#compose"><i class="fa fa-plus"></i> <?=lang("MSG_NEW");?></button>

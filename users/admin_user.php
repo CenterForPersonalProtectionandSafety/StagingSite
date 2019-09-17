@@ -600,8 +600,8 @@ else $protectedprof = 0;
 
                 <label> Block?:</label>
                 <select name="active" class="form-control">
-                        <option value="1" <?php if ($userdetails->permissions==1){echo "selected='selected'";} else { if(!checkMenu(2,$user->data()->id)){  ?>disabled<?php }} ?>>No</option>
-                        <option value="0" <?php if ($userdetails->permissions==0){echo "selected='selected'";} else { if(!checkMenu(2,$user->data()->id)){  ?>disabled<?php }} ?>>Yes</option>
+                        <option value="1" <?php if ($userdetails->permissions==1){echo "selected='selected'";} else { if(!checkMenu(1,$user->data()->id)){  ?>disabled<?php }} ?>>No</option>
+                        <option value="0" <?php if ($userdetails->permissions==0){echo "selected='selected'";} else { if(!checkMenu(1,$user->data()->id)){  ?>disabled<?php }} ?>>Yes</option>
                 </select>
 
                 <label> Force Password Reset?:</label>
@@ -611,7 +611,7 @@ else $protectedprof = 0;
                 </select>
 
                 <label>Delete this User?
-      <input type='checkbox' name='delete[<?php echo "$userId"; ?>]' id='delete[<? echo "$userId"; ?>]' value='<?php echo "$userId"; ?>' <?php if (!checkMenu(2,$user->data()->id) || $userId == 1){  ?>disabled<?php } ?>></label>
+      <input type='checkbox' name='delete[<?php echo "$userId"; ?>]' id='delete[<? echo "$userId"; ?>]' value='<?php echo "$userId"; ?>' <?php if (!checkMenu(1,$user->data()->id) || $userId == 1){  ?>disabled<?php } ?>></label>
       </div>
       <div class="modal-footer">
           <div class="btn-group"><input class='btn btn-primary' type='submit' value='Update' class='submit' /></div>
