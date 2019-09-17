@@ -203,7 +203,7 @@ if (!empty($_POST)) {
 
                           <div>
                             <h1>
-                              <?php if (checkMenu(1,$user->data()->id)){  ?>
+                              <?php if (checkMenu(2,$user->data()->id)){  ?>
                                 <div class="btn-group pull-left"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#composemass"><i class="fa fa-plus"></i> New Mass Message</button>
                                 </div>
                               <?php } ?> <center>Conversations <a href="#" data-toggle="modal" class="nounderline" data-target="#settings"><i class="fa fa-cog"></i></a>

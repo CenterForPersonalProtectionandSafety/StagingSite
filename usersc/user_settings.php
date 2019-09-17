@@ -16,7 +16,7 @@ require_once $abs_us_root.$us_url_root.'usersc/includes/navigation.php';
 
 <?php
 //dealing with if the user is logged in
-if ($user->isLoggedIn() && !checkMenu(1, $user->data()->id)) {
+if ($user->isLoggedIn() && !checkMenu(2, $user->data()->id)) {
     if (($settings->site_offline==1) && (!in_array($user->data()->id, $master_account)) && ($currentPage != 'login.php') && ($currentPage != 'maintenance.php')) {
         $user->logout();
         Redirect::to($us_url_root.'users/maintenance.php');

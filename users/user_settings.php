@@ -24,7 +24,7 @@ require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
 if (!securePage($_SERVER['PHP_SELF'])){die();}
 $hooks =  getMyHooks();
 //dealing with if the user is logged in
-if($user->isLoggedIn() && !checkMenu(1,$user->data()->id)){
+if($user->isLoggedIn() && !checkMenu(2,$user->data()->id)){
 	if (($settings->site_offline==1) && (!in_array($user->data()->id, $master_account)) && ($currentPage != 'login.php') && ($currentPage != 'maintenance.php')){
 		$user->logout();
 		Redirect::to($us_url_root.'users/maintenance.php');

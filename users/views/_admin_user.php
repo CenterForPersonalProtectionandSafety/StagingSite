@@ -608,8 +608,8 @@ if(!empty($_POST)) {
 
                                 <label> Block<a class="nounderline" data-toggle="tooltip" title="Drop the banhammer on a troublemaker!"><font color="blue">?</font></a></label>
                                 <select name="active" class="form-control">
-                                  <option value="1" <?php if ($userdetails->permissions==1){echo "selected='selected'";} else { if(!checkMenu(1,$user->data()->id)){  ?>disabled<?php }} ?>>No</option>
-                                  <option value="0" <?php if ($userdetails->permissions==0){echo "selected='selected'";} else { if(!checkMenu(1,$user->data()->id)){  ?>disabled<?php }} ?>>Yes</option>
+                                  <option value="1" <?php if ($userdetails->permissions==1){echo "selected='selected'";} else { if(!checkMenu(2,$user->data()->id)){  ?>disabled<?php }} ?>>No</option>
+                                  <option value="0" <?php if ($userdetails->permissions==0){echo "selected='selected'";} else { if(!checkMenu(2,$user->data()->id)){  ?>disabled<?php }} ?>>Yes</option>
                                 </select>
 
                                 <label> Force Password Reset<a class="nounderline" data-toggle="tooltip" title="The user will be required to create a new password on next login"><font color="blue">?</font></a></label>
@@ -619,7 +619,7 @@ if(!empty($_POST)) {
                                 </select>
 
                                 <label>Delete this User<a class="nounderline" data-toggle="tooltip" title="Completely delete a user"><font color="blue">?</font></a>
-                                  <input type='checkbox' name='delete[<?php echo "$userId"; ?>]' id='delete[<? echo "$userId"; ?>]' value='<?php echo "$userId"; ?>' <?php if (!checkMenu(1,$user->data()->id) || $userId == 1){  ?>disabled<?php } ?>></label>
+                                  <input type='checkbox' name='delete[<?php echo "$userId"; ?>]' id='delete[<? echo "$userId"; ?>]' value='<?php echo "$userId"; ?>' <?php if (!checkMenu(2,$user->data()->id) || $userId == 1){  ?>disabled<?php } ?>></label>
                                 </div>
                                 <div class="modal-footer">
                                   <div class="btn-group"><input class='btn btn-primary' type='submit' value='Update' class='submit' /></div>

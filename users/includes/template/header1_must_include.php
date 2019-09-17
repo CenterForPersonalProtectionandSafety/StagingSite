@@ -69,7 +69,7 @@ if(file_exists($abs_us_root.$us_url_root.'usersc/'.$currentPage)){
 
 
 //dealing with logged in users
-if($user->isLoggedIn() && !checkMenu(1,$user->data()->id)){
+if($user->isLoggedIn() && !checkMenu(2,$user->data()->id)){
 	if (($settings->site_offline==1) && (!in_array($user->data()->id, $master_account)) && ($currentPage != 'login.php') && ($currentPage != 'maintenance.php')){
 		//:: force logout then redirect to maint.page
 		logger($user->data()->id,"Offline","Landed on Maintenance Page."); //Lggger
