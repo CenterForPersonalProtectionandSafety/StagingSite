@@ -175,7 +175,7 @@ if (!empty($_POST)) {
             $addNewPermission = array('user_id' => $theNewId, 'permission_id' => 1);
             $db->insert('user_permission_matches',$addNewPermission);
             $db->insert('profiles',['user_id'=>$theNewId, 'bio'=>'']);
-            include($abs_us_root.$us_url_root.'usersc/scripts/during_user_creation.php');
+            // include($abs_us_root.$us_url_root.'usersc/scripts/during_user_creation.php');
             if(isset($_POST['sendEmail'])) {
               $userDetails = fetchUserDetails(NULL, NULL, $theNewId);
               $params = array(
