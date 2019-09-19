@@ -3,6 +3,11 @@ require_once 'users/init.php';
 require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
 if(isset($user) && $user->isLoggedIn()){
 }
+//Redirect user on first login if haven't reset password
+if($user->data()->first_login_pass_reset == 0) {
+  Redirect::to($us_url_root.'usersc/user_settings.php');
+}
+
 ?>
 	<!-- Hero Banner Welcome Section -->
 	<header id="hero-section"class="jumbotron jumbotron-fluid hero">
@@ -127,7 +132,7 @@ if(isset($user) && $user->isLoggedIn()){
 	    </div>
 	  </div>
 	</div>
-	
+
 <?php  languageSwitcher();?>
 <!-- Place any per-page javascript here -->
 <?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>
