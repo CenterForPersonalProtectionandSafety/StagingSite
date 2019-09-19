@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template>
-  <name>Standard</name>
-  <author>Dan Hoover</author>
+  <name>CPPS</name>
+  <author>Michael Arnold</author>
 <!-- Feel free to include your github repo here -->
-  <website>https://UserSpice.com</website>
+  <website></website>
 
 <!-- the version of the template iteself -->
-  <version>1.0.1</version>
+  <version>1.0</version>
 
 <!-- release date of THIS version -->
   <release>August 26, 2019</release>
