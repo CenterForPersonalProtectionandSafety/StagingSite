@@ -7,24 +7,24 @@
     includeHook($hooks,'body');
     ?>
 
-    <form class="form-signup" action="<?=$form_action;?>" method="<?=$form_method;?>">
+    <form class="w3-container" action="<?=$form_action;?>" method="<?=$form_method;?>">
 
       <h2 class="form-signin-heading"> <?=lang("SIGNUP_TEXT","");?></h2>
 
-      <div class="form-group">
+
 
         <?php if($settings->auto_assign_un==0) {?><label><?=lang("GEN_UNAME");?>*</label>&nbsp;&nbsp;<span id="usernameCheck" class="small"></span>
-        <input type="text" class="form-control" id="username" name="username" placeholder="<?=lang("GEN_UNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $username;} ?>" required autofocus autocomplete="username"><?php } ?>
+        <input type="text" class="w3-input w3-border" id="username" name="username" placeholder="<?=lang("GEN_UNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $username;} ?>" required autofocus autocomplete="username"><?php } ?>
 
 
         <label for="fname"><?=lang("GEN_FNAME");?>*</label>
-        <input type="text" class="form-control" id="fname" name="fname" placeholder="<?=lang("GEN_FNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $fname;} ?>" required autofocus autocomplete="first-name">
+        <input type="text" class="w3-input w3-border" id="fname" name="fname" placeholder="<?=lang("GEN_FNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $fname;} ?>" required autofocus autocomplete="first-name">
 
         <label for="lname"><?=lang("GEN_LNAME");?>*</label>
-        <input type="text" class="form-control" id="lname" name="lname" placeholder="<?=lang("GEN_LNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $lname;} ?>" required autocomplete="family-name">
+        <input type="text" class="w3-input w3-border" id="lname" name="lname" placeholder="<?=lang("GEN_LNAME");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $lname;} ?>" required autocomplete="family-name">
 
         <label for="email"><?=lang("GEN_EMAIL");?>*</label>
-        <input  class="form-control" type="text" name="email" id="email" placeholder="<?=lang("GEN_EMAIL");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $email;} ?>" required autocomplete="email">
+        <input  class="w3-input w3-border" type="text" name="email" id="email" placeholder="<?=lang("GEN_EMAIL");?>" value="<?php if (!$form_valid && !empty($_POST)){ echo $email;} ?>" required autocomplete="email">
 
         <?php
 
@@ -121,10 +121,10 @@
 
 
           <label for="password"><?=lang("GEN_PASS");?>* (Between 6 & 20 Characters. Must include number and capital letter.)</label>
-          <input  class="form-control" type="password" name="password" id="password" placeholder="<?=lang("GEN_PASS");?>" required autocomplete="password" aria-describedby="passwordhelp">
+          <input  class="w3-input w3-border" type="password" name="password" id="password" placeholder="<?=lang("GEN_PASS");?>" required autocomplete="password" aria-describedby="passwordhelp">
 
           <label for="confirm"><?=lang("PW_CONF");?>*</label>
-          <input  type="password" id="confirm" name="confirm" class="form-control" placeholder="<?=lang("PW_CONF");?>" required autocomplete="password" >
+          <input  type="password" id="confirm" name="confirm" class="w3-input w3-border" placeholder="<?=lang("PW_CONF");?>" required autocomplete="password" >
 
         <br><br>
 
@@ -149,7 +149,7 @@
 
           <label><input type="checkbox" id="agreement_checkbox" name="agreement_checkbox"> <?=lang("JOIN_ACCEPTTC");?></label>
         <?php } //if TOS enabled ?>
-      </div>
+
 
       <input type="hidden" value="<?=Token::generate();?>" name="csrf">
       <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" id="next_button"><i class="fa fa-plus-square"></i> <?=lang("SIGNUP_TEXT");?></button>
