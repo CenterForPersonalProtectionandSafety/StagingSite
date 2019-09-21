@@ -192,10 +192,10 @@ if (!empty($_POST)) {
   ?>
 
   <!--  Add checkMenu(X,$user->data()->id) ||  with proper permission id value-->
-  <?php if (checkMenu(2,$user->data()->id) || checkMenu(3,$user->data()->id)){ ?>
+  <?php if (checkMenu(3,$user->data()->id)){ ?>
 
   <div class="container">
-    <h2>Manage User Permissions</h2>
+    <h2>View Users</h2>
     <?=resultBlock($errors,$successes);?>
     <hr />
     <div class="alluinfo">&nbsp;</div>
@@ -203,7 +203,7 @@ if (!empty($_POST)) {
       <table id="paginate" class='table table-hover'>
         <thead class="thead-light">
           <tr>
-            <th></th>
+            <th>ID</th>
             <th>Username</th>
             <th>Name</th>
             <th>Email</th>
@@ -215,69 +215,21 @@ if (!empty($_POST)) {
           foreach ($userData as $v1) {
             ?>
             <tr>
-              <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->id?></a></td>
-              <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->username?></a></td>
-              <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->fname?> <?=$v1->lname?></a></td>
-              <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->email?></a></td>
+              <td><?=$v1->id?></td>
+              <td><?=$v1->username?></td>
+              <td><?=$v1->fname?> <?=$v1->lname?></td>
+              <td><?=$v1->email?></td>
             </tr>
           <?php } ?>
         </tbody>
       </table>
     </div>
-    <button class="btn btn-secondary btn-lg pull-right" data-toggle="modal" data-target="#adduser">
+    <!-- <button class="btn btn-secondary btn-lg pull-right" data-toggle="modal" data-target="#adduser">
       <i class="fa fa-plus"></i> Manually Add User
-    </button>
+    </button> -->
   </div>
 
   <?php }else { include $abs_us_root.$us_url_root.'usersc/includes/warning.php'; } ?>
-
-
-  <div id="adduser" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">User Addition</h4>
-        </div>
-        <div class="modal-body">
-          <form class="form-signup" action="client_admin.php?view=users" method="POST">
-            <div class="panel-body">
-              <?php if($settings->auto_assign_un==0) {?><label>Username: </label>&nbsp;&nbsp;<span id="usernameCheck" class="small"></span><input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off" value="<?php if (!$form_valid && !empty($_POST)){ echo $username;} ?>" required><?php } ?>
-                <label>First Name: </label><input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" value="<?php if (!$form_valid && !empty($_POST)){ echo $fname;} ?>" required autocomplete="off">
-                <label>Last Name: </label><input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" value="<?php if (!$form_valid && !empty($_POST)){ echo $lname;} ?>" required autocomplete="off">
-                <label>Email: </label><input  class="form-control" type="text" name="email" id="email" placeholder="Email Address" value="<?php if (!$form_valid && !empty($_POST)){ echo $email;} ?>" required autocomplete="off">
-                <label>Password: </label>
-                <div class="input-group" data-container="body">
-                  <span class="input-group-addon password_view_control" id="addon1"><span class="fa fa-eye"></span></span>
-                  <input  class="form-control" type="password" name="password" id="password" <?php if($settings->force_pr==1) { ?>value="<?=$random_password?>" readonly<?php } ?> placeholder="Password" required autocomplete="off" aria-describedby="passwordhelp">
-                  <?php if($settings->force_pr==1) { ?>
-                    <span class="input-group-addon" id="addon2"><a class="nounderline pwpopover" data-container="body" data-toggle="popover" data-placement="top" data-content="The Administrator has manual creation password resets enabled. If you choose to send an email to this user, it will supply them with the password reset link and let them know they have an account. If you choose to not, you should manually supply them with this password (discouraged).">Why can't I edit this?</a></span>
-                  <?php } ?>
-                </div>
-                <label>Confirm Password: </label>
-                <div class="input-group" data-container="body">
-                  <span class="input-group-addon password_view_control" id="addon1"><span class="fa fa-eye"></span></span>
-                  <input  type="password" id="confirm" name="confirm" <?php if($settings->force_pr==1) { ?>value="<?=$random_password?>" readonly<?php } ?> class="form-control" autocomplete="off" placeholder="Confirm Password" required >
-                  <?php if($settings->force_pr==1) { ?>
-                    <span class="input-group-addon" id="addon2"><a class="nounderline pwpopover" data-container="body" data-toggle="popover" data-placement="top" data-content="The Administrator has manual creation password resets enabled. If you choose to send an email to this user, it will supply them with the password reset link and let them know they have an account. If you choose to not, you should manually supply them with this password (discouraged).">Why can't I edit this?</a></span>
-                  <?php } ?>
-                </div>
-
-                <?php include($abs_us_root.$us_url_root.'usersc/scripts/additional_join_form_fields.php'); ?>
-                <label><input type="checkbox" name="sendEmail" id="sendEmail" checked /> Send Email?</label>
-                <br />
-              </div>
-              <div class="modal-footer">
-                <div class="btn-group">
-                  <input type="hidden" name="csrf" value="<?=Token::generate();?>" />
-                  <input class='btn btn-primary' type='submit' id="addUser" name="addUser" value='Add User' class='submit' /></div>
-                  <div class="btn-group"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
 
 
       <script type="text/javascript" src="js/pagination/datatables.min.js"></script>
