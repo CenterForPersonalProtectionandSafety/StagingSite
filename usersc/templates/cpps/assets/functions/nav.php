@@ -20,7 +20,7 @@
 								<?php } // if user is logged in ?>
 
 								<!--  Add checkMenu(X,$user->data()->id) ||  with proper permission id value-->
-								<?php if(checkMenu(3,$user->data()->id)) {  //Links for permission level X (Admin) ?>
+								<?php if (checkMenu(3,$user->data()->id)) {  //Links for permission level X (Admin) ?>
 									<a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php"><i class="fa fa-lock" aria-hidden="true"></i> Manager Dashboard</a>
 									<a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php?view=learner"><i class="fa fa-file-text"></i> Learners List</a>
 									<div class="dropdown-divider"></div>
