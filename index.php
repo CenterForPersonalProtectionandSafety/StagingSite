@@ -9,7 +9,7 @@ require_once 'users/init.php';
 if(isset($user) && $user->isLoggedIn()){
   Redirect::to($us_url_root.'usersc/index.php');
 }else{
-  Redirect::to($us_url_root.'users/login.php');
+  Redirect::to($us_url_root.'usersc/login.php');
 }
 die();
 ?>
