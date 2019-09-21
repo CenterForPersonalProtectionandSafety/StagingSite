@@ -4,7 +4,7 @@ SCORM Player - Tier 3
 */
 ?>
 
-<?php require_once '../users/init.php'; ?>
+<?php require_once '../../../users/init.php'; ?>
 <?php require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php'; ?>
 <?php if (!securePage($_SERVER['PHP_SELF'])){die();} ?>
 
@@ -17,7 +17,7 @@ SCORM Player - Tier 3
       <h4 class="view-page-text">Please do not close this tab until finished with course.</h4>
       <h4 class="view-page-text">If the course does not begin, please ensure your popup blocker has been disabled. <br> Once disabled, please click the refresh button below to re-launch the course.</h4>
       <br>
-      <a href="../index.php" class="btn btn-md" role="button">Return Home</a>
+      <a href="../../index.php" class="btn btn-md" role="button">Return Home</a>
 
       <!-- This button "refreshes" the page -->
       <a href="#" class="btn btn-md" role="button" onClick="window.location.href=window.location.href">Refresh Page</a>

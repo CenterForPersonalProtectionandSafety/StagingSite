@@ -4,7 +4,7 @@ SCORM Player - Tier 3
 */
 ?>
 
-<?php require_once '../users/init.php'; ?>
+<?php require_once '../../../users/init.php'; ?>
 <?php require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php'; ?>
 <?php if (!securePage($_SERVER['PHP_SELF'])){die();} ?>
 
@@ -17,7 +17,7 @@ SCORM Player - Tier 3
       <h4 class="view-page-text">Please do not close this tab until finished with course.</h4>
       <h4 class="view-page-text">If the course does not begin, please ensure your popup blocker has been disabled. <br> Once disabled, please click the refresh button below to re-launch the course.</h4>
       <br>
-      <a href="../index.php" class="btn btn-md" role="button">Return Home</a>
+      <a href="../../index.php" class="btn btn-md" role="button">Return Home</a>
 
       <!-- This button "refreshes" the page -->
       <a href="#" class="btn btn-md" role="button" onClick="window.location.href=window.location.href">Refresh Page</a>
@@ -30,7 +30,7 @@ SCORM Player - Tier 3
     function scormIsComplete() {
         //my code goes here
         jQuery.ajax({
-            url:"modules/functions/iscomplete/T2M4_iscomplete.php",
+            url:"modules/functions/iscomplete/T3M2_iscomplete.php",
             method:"POST",
             success: function() {
                 console.log('success');
@@ -46,7 +46,7 @@ SCORM Player - Tier 3
 
     function scormSaveTime(mytime) {
         jQuery.ajax({
-            url:"modules/functions/savetime/T2M4_savetime.php",
+            url:"modules/functions/savetime/T3M2_savetime.php",
             method:"POST",
             data:{mybookmark:mytime},
             success: function() {
@@ -61,7 +61,7 @@ SCORM Player - Tier 3
     function scormGetTime() {
         //my code goes here
         var mytime = jQuery.ajax({
-            url:"modules/functions/gettime/T2M4_gettime.php",
+            url:"modules/functions/gettime/T3M2_gettime.php",
             method:"POST",
             async: false,
             success: function() {
@@ -576,7 +576,7 @@ SCORM Player - Tier 3
                 initTimeout = 0;
                 timeoutErrorDisplayed = false;
                 //            var launchFileAltVal = $('launchFileAlt').value;
-                var launchFileAltVal = '../SCORM/T2M4/index_lms.html';
+                var launchFileAltVal = '../SCORM/T3M2/index_lms.html';
                 //            var cookieNameAltVal = $('cookieNameAlt').value;
                 if(launchFileAltVal.length > 0)
                 {
