@@ -14,17 +14,17 @@
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-cog"></i> Options</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-								<?php if (checkMenu(2,$user->data()->id)){  //Links for permission level 2 (Superuser) ?>
+								<?php if (checkMenu(2,$user->data()->id)) {  //Links for permission level 2 (Superuser) ?>
 									<a class="dropdown-item" href="<?=$us_url_root?>users/admin.php"><i class="fa fa-fw fa-cogs"></i> Super-User Dashboard</a>
 									<div class="dropdown-divider"></div>
-								<?php } else {exit;} // if user is logged in ?>
+								<?php } // if user is logged in ?>
 
 								<!--  Add checkMenu(X,$user->data()->id) ||  with proper permission id value-->
-								<?php if(checkMenu(2,$user->data()->id) || checkMenu(3,$user->data()->id)){  //Links for permission level X (Admin) ?>
+								<?php if(checkMenu(3,$user->data()->id)) {  //Links for permission level X (Admin) ?>
 									<a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php"><i class="fa fa-lock" aria-hidden="true"></i> Manager Dashboard</a>
 									<a class="dropdown-item" href="<?=$us_url_root?>usersc/client_admin.php?view=learner"><i class="fa fa-file-text"></i> Learners List</a>
 									<div class="dropdown-divider"></div>
-								<?php }else{exit;} // if user is logged in ?>
+								<?php } // if user is logged in ?>
 
 									<a class="dropdown-item" href="<?=$us_url_root?>users/logout.php"><i class="fa fa-power-off"></i> Logout</a>
 							</div>
