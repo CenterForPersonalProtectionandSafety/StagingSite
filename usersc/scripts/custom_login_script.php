@@ -5,8 +5,8 @@
 //in this example, admins will go to the dashboard and others will go to the location you configured
 //in the dashboard under settings->general->Redirect After Login
 if(hasPerm([2],$user->data()->id)){
-  Redirect::to($us_url_root.'users/admin.php');
+  Redirect::to($us_url_root.'usersc/index.php');
 }else{
-Redirect::to($us_url_root.$settings->redirect_uri_after_login);
+  Redirect::to($us_url_root.$settings->redirect_uri_after_login);
 }
 ?>
