@@ -3,8 +3,6 @@
     <div class="page-title">
       <ol class="breadcrumb text-right">
         <li><a href="<?=$us_url_root?>usersc/client_admin.php">Dashboard</a></li>
-        <li>Manage</li>
-        <li><a class="active" href="<?=$us_url_root?>usersc/client_admin.php?view=learner">Learners List</a></li>
       </ol>
     </div>
   </div>
