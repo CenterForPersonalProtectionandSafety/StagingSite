@@ -213,7 +213,7 @@ if(!empty($_POST)) {
             if (empty($errors) && Input::get('old')!=Input::get('password')) {
                 //process
                 $new_password_hash = password_hash(Input::get('password'),PASSWORD_BCRYPT,array('cost' => 12));
-                $user->update(array('password' => $new_password_hash,'force_pr' => 0,'vericode' => randomstring(15),),$user->data()->id);
+                $user->update(array('password' => $new_password_hash,'force_pr' => 0,'vericode' => randomstring(15), 'first_login_pass_reset' => 1,),$user->data()->id);
                 $successes[]=lang("PW_UPD");
 								logger($user->data()->id,"User","Updated password.");
 								if($settings->session_manager==1) {
@@ -225,6 +225,7 @@ if(!empty($_POST)) {
 										$errors[] = lang("ERR_FAIL_ACT").$passwordResetKillSessions;
 									}
 								}
+								Redirect::to('index.php');
             } else {
 							if(Input::get('old')==Input::get('password')) {
 								$errors[] = lang("ERR_PW_SAME");
