@@ -43,7 +43,6 @@
                                   <thead>
                                       <tr>
                                           <th>Name</th><th>Email</th>
-                                          <th>Last Sign In</th>
                                           <th>T2M1</th>
                                           <th>T2M2</th>
                                           <th>T2M3</th>
@@ -64,7 +63,6 @@
                                       <tr>
                                           <td><?=$v1->fname?> <?=$v1->lname?></td>
                                           <td><?=$v1->email?></td>
-                                          <td><?php if($v1->last_login != 0) { echo $v1->last_login; } else {?> <i>Never</i> <?php }?></td>
                                           <td><?php if($v1->complete_t2m1==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
                                           <td><?php if($v1->complete_t2m2==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
                                           <td><?php if($v1->complete_t2m3==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>

@@ -90,21 +90,6 @@ if(($file_headers[0] != 'HTTP/1.1 200 OK') && ($file_headers[1] != 'HTTP/1.1 200
 <div class="row">
 <div class="col-12">
 
-  <?php if(isset($message) && $message != ''){  ?>
-  <div class="sufee-alert alert with-close alert-<?=$class?> alert-dismissible fade show">
-    <span class="badge badge-pill badge-<?=$class?>"><?php echo htmlspecialchars($title);?></span> <a href="<?php echo htmlspecialchars($link);?>"><?php echo htmlspecialchars($message);?></a>
-    <button type="button" class="close dismiss-announcement" data-dismiss="alert"
-    data-dis="<?=$dis?>"
-    data-ignore="<?=$ignore?>"
-    data-title="<?=$title?>"
-    data-class="<?=$class?>"
-    data-link="<?=$link?>"
-    data-message="<?=$message?>"
-    aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<?php } ?>
 </div>
 </div>
   <script type="text/javascript">
