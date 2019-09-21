@@ -263,7 +263,7 @@ if(Input::exists()){
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="templates/cpps/assets/css/logged_out.css">
   <script type="text/javascript">
-    $(document).ready(function(){
+    document.addEventListener("DOMContentLoaded", function(){
         document.getElementById('joinModal').style.display='block'
       });
   </script>
