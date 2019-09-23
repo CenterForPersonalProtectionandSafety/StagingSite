@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <div class="w3-center">
 
   <h2><?=lang("VER_OOPS");?></h2>
-  <p><a href="forgot_password.php" class="btn btn-primary"><?=lang("PW_RESET");?></a></p>
+  <button class="w3-button w3-block w3-dark-grey w3-section w3-padding"><a href="forgot_password.php"><?=lang("PW_RESET");?></a></button>
   <br />
-  
+
 </div>
