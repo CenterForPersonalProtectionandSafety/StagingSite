@@ -19,10 +19,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<div class="row">
-  <div class="col-sm-12">
-    <h2><?=lang("VER_RESET");?></h2>
-    <p><a href="login.php" class="btn btn-primary"><?=lang("SIGNIN_TEXT");?></a></p>
-    <br />
-  </div><!-- /.col -->
-</div><!-- /.row -->
+
+<div class="w3-center">
+
+  <h2><?=lang("VER_RESET");?></h2>
+  <p><a href="login.php" class="w3-button w3-block w3-dark-grey w3-section w3-padding"><?=lang("SIGNIN_TEXT");?></a></p>
+  <br />
+  
+</div>
