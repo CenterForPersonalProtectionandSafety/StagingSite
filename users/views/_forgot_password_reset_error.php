@@ -19,10 +19,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<div class="row">
-  <div class="col-sm-12">
-    <h2><?=lang("VER_OOPS");?></h2>
-    <p><a href="forgot_password.php" class="btn btn-primary"><?=lang("PW_RESET");?></a></p>
-    <br />
-  </div><!-- /.col -->
-</div><!-- /.row -->
+<div class="w3-center">
+
+  <h2><?=lang("VER_OOPS");?></h2>
+  <p><a href="forgot_password.php" class="btn btn-primary"><?=lang("PW_RESET");?></a></p>
+  <br />
+  
+</div>
