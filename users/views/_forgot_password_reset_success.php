@@ -23,7 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <div class="w3-center">
 
   <h2><?=lang("VER_RESET");?></h2>
-  <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><?=lang("SIGNIN_TEXT");?></button>
+  <div class="w3-container">
+    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><?=lang("SIGNIN_TEXT");?></button>
+  </div>
   <br />
 
 </div>
