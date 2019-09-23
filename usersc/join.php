@@ -289,7 +289,7 @@ if(Input::exists()){
           <div class="w3-bar">
             <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><i class="fa fa-sign-in"></i> Login</button>
             <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
-            <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/join.php'"><i class="fa fa-user-plus"></i> Register</button>
+            <!-- <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/join.php'"><i class="fa fa-user-plus"></i> Register</button> -->
           </div>
 
         </div>
