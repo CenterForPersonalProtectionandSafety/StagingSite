@@ -19,9 +19,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-<div class="row">
-  <div class="col-sm-12">
-    <?=lang("VER_SENT");?><?=$settings->reset_vericode_expiry?> <?=lang("T_MINUTES");?>.</p>
+<div class="w3-center">
+    <p><?=lang("VER_SENT");?><?=$settings->reset_vericode_expiry?> <?=lang("T_MINUTES");?>.</p>
     <br />
-  </div><!-- /.col -->
-</div><!-- /.row -->
+</div>
