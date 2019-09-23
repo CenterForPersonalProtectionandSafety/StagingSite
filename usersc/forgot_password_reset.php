@@ -100,8 +100,17 @@ if(Input::get('reset') == 1){ //$_GET['reset'] is set when clicking the link in 
 }
 
 ?>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="templates/cpps/assets/css/logged_out.css">
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(){
+      document.getElementById('forgotModal').style.display='block'
+    });
+</script>
+
 <div class="w3-container">
-  <div id="joinModal" class="w3-modal" data-keyboard="false" data-backdrop="static">
+  <div id="forgotModal" class="w3-modal" data-keyboard="false" data-backdrop="static">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:1100px">
 
       <div class="w3-center"><br>

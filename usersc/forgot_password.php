@@ -80,12 +80,12 @@ if ($user->isLoggedIn()) $user->logout();
 <link rel="stylesheet" type="text/css" href="templates/cpps/assets/css/logged_out.css">
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(){
-      document.getElementById('joinModal').style.display='block'
+      document.getElementById('forgotModal').style.display='block'
     });
 </script>
 
 <div class="w3-container">
-  <div id="joinModal" class="w3-modal" data-keyboard="false" data-backdrop="static">
+  <div id="forgotModal" class="w3-modal" data-keyboard="false" data-backdrop="static">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:1100px">
 
       <div class="w3-center"><br>
