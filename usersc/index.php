@@ -13,11 +13,10 @@ if($user->data()->first_login_pass_reset == 0) {
 	<header id="hero-section"class="jumbotron jumbotron-fluid hero">
 	  <div class="container-fluid text-center">
 	   <h3>WELCOME</h3>
-	   <h1 class="display-3">FBI NCA</h1>
+	   <h1 class="display-3">CPPS Employees</h1>
 	   <h3 class="lead pb-4">To CPPS University</h3>
 	   <a href="#" id="link_about" class="btn btn-md" role="button">About Us</a>
-	   <a href="#" id="tier2_link" class="btn btn-md" role="button">Tier 2 Courses</a>
-	   <a href="#" id="tier3_link" class="btn btn-md" role="button">Tier 3 Courses</a>
+	   <a href="#" id="tier2_link" class="btn btn-md" role="button">Onboarding Courses</a>
 	  </div>
 	</header>
 
@@ -67,71 +66,35 @@ if($user->data()->first_login_pass_reset == 0) {
 	  </div>
 	</div>
 
-	<!-- Tier 2 Course Modules -->
+	<!-- Course Modules -->
 	<div id="t2course" class="row">
 	  <div class="col-xl custom-col">
 	    <div class="container">
-	      <h2 class="display-4 text-center mt-5 mb-3">TIER 2 MODULES</h2>
+	      <h2 class="display-4 text-center mt-5 mb-3">Onboarding Training</h2>
 	      <hr>
-	      <p class="sec-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	      <p class="sec-description"></p>
 	    </div>
 	    <div class="wrapper">
 	      <?php
 	          // -- card_flip
 	          //Include the Tier 2 Module 1
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier2/T2M1_Module.php';
+	          include $abs_us_root.$us_url_root.'usersc/modules/courses/OAE_Module.php';
 
 	          //Include the Tier 2 Module 2
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier2/T2M2_Module.php';
+	          include $abs_us_root.$us_url_root.'usersc/modules/courses/OS_Module.php';
 
 	          //Include the Tier 2 Module 3
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier2/T2M3_Module.php';
+	          include $abs_us_root.$us_url_root.'usersc/modules/courses/OTT_Module.php';
 
-	          //Include the Tier 2 Module 4
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier2/T2M4_Module.php';
-
-	          //Include the Tier 2 Module 5
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier2/T2M5_Module.php';
 	       ?>
 	    </div>
-	    <div class="text-center">
-	      <a href="#" id="sec_tier3_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-down"></i></a>
-	    </div>
+      <div class="text-center">
+        <a href="#" id="to_top_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-up"></i></a>
+      </div>
+
 	  </div>
 	</div>
 
-	<!-- Tier 3 Course Modules -->
-	<div id="t3course" class="row">
-	  <div class="col-xl custom-col">
-	    <div class="container">
-	      <h2 class="display-4 text-center mt-5 mb-3">TIER 3 MODULES</h2>
-	      <hr>
-	      <p class="sec-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	    </div>
-	    <div class="wrapper">
-	      <?php
-	          // -- card_flip
-	          //Include the Tier 3 Module 1
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier3/T3M1_Module.php';
-
-	          //Include the Tier 3 Module 2
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier3/T3M2_Module.php';
-
-	          //Include the Tier 3 Module 3
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier3/T3M3_Module.php';
-
-	          //Include the Tier 3 Module 4
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier3/T3M4_Module.php';
-
-	          //Include the Tier 3 Module 5
-	          include $abs_us_root.$us_url_root.'usersc/modules/courses/Tier3/T3M5_Module.php';
-	       ?>
-	    </div>
-	    <div class="text-center">
-	      <a href="#" id="to_top_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-up"></i></a>
-	    </div>
-	  </div>
-	</div>
 
 <?php  languageSwitcher();?>
 <!-- Place any per-page javascript here -->

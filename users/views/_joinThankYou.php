@@ -19,12 +19,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 ?>
-
-<div class="row">
-  <div class="col-sm-12">
-    <h1><?=lang("JOIN_SUC")?><?=$settings->site_name?></h1>
-    <p><?=lang("JOIN_THANKS");?></p>
-    <a href="login.php" class="btn btn-primary"><?=lang("SIGNIN_TEXT")?></a>
-    <br /><br />
+<div class="w3-center">
+  <h1><?=lang("JOIN_SUC")?><?=$settings->site_name?></h1>
+  <p><?=lang("JOIN_THANKS");?></p>
+  <div class="w3-container">
+    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><?=lang("SIGNIN_TEXT");?></button>
   </div>
+  <br /><br />
 </div>

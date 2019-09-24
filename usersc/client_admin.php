@@ -61,44 +61,16 @@ ini_set('memory_limit','1024M');
       $path = usView('_admin_users.php');
       include($path);
       break;
-    case "t2m1":
-      $path = usView('_t2m1_list.php');
+    case "oae":
+      $path = usView('_oae_list.php');
       include($path);
       break;
-    case "t2m2":
-      $path = usView('_t2m2_list.php');
+    case "os":
+      $path = usView('_os_list.php');
       include($path);
       break;
-    case "t2m3":
-      $path = usView('_t2m3_list.php');
-      include($path);
-      break;
-    case "t2m4":
-      $path = usView('_t2m4_list.php');
-      include($path);
-      break;
-    case "t2m5":
-      $path = usView('_t2m4_list.php');
-      include($path);
-      break;
-    case "t3m1":
-      $path = usView('_t3m1_list.php');
-      include($path);
-      break;
-    case "t3m2":
-      $path = usView('_t3m2_list.php');
-      include($path);
-      break;
-    case "t3m3":
-      $path = usView('_t3m3_list.php');
-      include($path);
-      break;
-    case "t3m4":
-      $path = usView('_t3m4_list.php');
-      include($path);
-      break;
-    case "t3m5":
-      $path = usView('_t3m4_list.php');
+    case "ott":
+      $path = usView('_ott_list.php');
       include($path);
       break;
     case "upload":

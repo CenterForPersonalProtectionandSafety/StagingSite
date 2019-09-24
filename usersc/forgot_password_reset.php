@@ -114,7 +114,7 @@ if(Input::get('reset') == 1){ //$_GET['reset'] is set when clicking the link in 
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:1100px">
 
       <div class="w3-center"><br>
-        <img src="/usersc/images/cppslogo.png" class="w3-image" style="width:100%;max-width:300px">
+        <img src="/usersc/images/onboarding_logo.png" class="w3-image" style="width:100%;max-width:300px">
       </div>
 
 

@@ -1,7 +1,7 @@
 /* ---- usersc/login.php ---- */
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../../../../images/fbi_hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../../../../images/cpps_hero.jpg');
   /* background-image: url('../images/fbi_hero.jpg'); */
   width: 100%;
   min-width: 350px;

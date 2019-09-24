@@ -21,7 +21,7 @@ html, body {
 
 /********************** NAVBAR **********************/
 .navbar {
-	background: #444;
+	background: #343A40;
 	-o-transition: all .6s; -moz-transition: all .6s; -webkit-transition: all .6s; -ms-transition: all .6s; transition: all .6s;
 	backface-visibility: hidden;
 }
@@ -34,10 +34,10 @@ html, body {
 
 .navbar-expand-md .navbar-nav .nav-link { padding-left: 1rem; padding-right: 1rem; }
 
-.fixed-top.scrolled {
+/* .fixed-top.scrolled {
   background-color: #343A40 !important;
   transition: background-color 500ms linear;
-}
+} */
 /********************** NAVBAR END **********************/
 
 /********************** HERO SECTION END **********************/
@@ -50,7 +50,7 @@ html, body {
   align-items: center;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../../../../images/fbi_hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../../../../images/cpps_hero.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

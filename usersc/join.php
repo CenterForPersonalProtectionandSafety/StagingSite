@@ -236,7 +236,8 @@ if(Input::exists()){
                                         'active' => 1,
                                         'vericode' => $vericode,
                                         'vericode_expiry' => $vericode_expiry,
-                                        'oauth_tos_accepted' => true
+                                        'oauth_tos_accepted' => true,
+                                        'first_login_pass_reset' => 1
                                 ));
                         includeHook($hooks,'post');
                         } catch (Exception $e) {
@@ -249,7 +250,7 @@ if(Input::exists()){
                         include($abs_us_root.$us_url_root.'usersc/scripts/during_user_creation.php');
                         if($act==1) logger($theNewId,"User","Registration completed and verification email sent.");
                         if($act==0) logger($theNewId,"User","Registration completed.");
-                        Redirect::to($us_url_root.'users/joinThankYou.php');
+                        Redirect::to($us_url_root.'usersc/joinThankYou.php');
                 }
 
         } //Validation and agreement checbox
@@ -273,7 +274,7 @@ if(Input::exists()){
       <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:1100px">
 
         <div class="w3-center"><br>
-          <img src="/usersc/images/cppslogo.png" class="w3-image" style="width:100%;max-width:300px">
+          <img src="/usersc/images/onboarding_logo.png" class="w3-image" style="width:100%;max-width:300px">
         </div>
 
         <?php
@@ -286,11 +287,11 @@ if(Input::exists()){
           includeHook($hooks,'bottom');
         ?>
 
-          <div class="w3-bar">
-            <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><i class="fa fa-sign-in"></i> Login</button>
-            <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
-            <!-- <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/join.php'"><i class="fa fa-user-plus"></i> Register</button> -->
-          </div>
+        <div class="w3-bar">
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><i class="fa fa-sign-in"></i> Login</button>
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
+          <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/join.php'"><i class="fa fa-user-plus"></i> Register</button>
+        </div>
 
         </div>
       </div>

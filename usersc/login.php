@@ -149,7 +149,7 @@ if (!empty($_POST['login_hook'])) {
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
       <div class="w3-center"><br>
-        <img src="/usersc/images/cppslogo.png" alt="Avatar" style="width:50%" class=" w3-margin-top">
+        <img src="/usersc/images/onboarding_logo.png" alt="Avatar" style="width:50%" class=" w3-margin-top">
       </div>
 
       <form name="login" id="login-form" class="w3-container" action="login.php" method="post">
@@ -180,9 +180,9 @@ if (!empty($_POST['login_hook'])) {
       </form>
 
       <div class="w3-bar">
-        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><i class="fa fa-sign-in"></i> Login</button>
-        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:50%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
-        <!-- <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/join.php'"><i class="fa fa-user-plus"></i> Register</button> -->
+        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/login.php'"><i class="fa fa-sign-in"></i> Login</button>
+        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/forgot_password.php'"><i class="fa fa-info-circle"></i> Forgot Password</button>
+        <button class="w3-bar-item w3-button w3-dark-grey w3-mobile" style="width:33.3%" onclick="window.location.href='<?=$us_url_root?>usersc/join.php'"><i class="fa fa-user-plus"></i> Register</button>
       </div>
 
     </div>
