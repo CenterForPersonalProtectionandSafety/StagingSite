@@ -101,21 +101,21 @@ if($user->data()->first_login_pass_reset == 0) {
 	      <?php
 	          // -- card_flip
 	          //Include the Tier 2 Module 1
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier2/T2M1_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2M1_Card.php';
 
 	          //Include the Tier 2 Module 2
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier2/T2M2_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2M2_Card.php';
 
 	          //Include the Tier 2 Module 3
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier2/T2M3_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2M3_Card.php';
 
 	          //Include the Tier 2 Module 4
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier2/T2M4_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2M4_Card.php';
 
 	          //Include the Tier 2 Module 5
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier2/T2M5_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2M5_Card.php';
 
-            if($t2quiz) {include $abs_us_root.$us_url_root.'courses/modules/Tier2/T2_Quiz.php';}
+            if($t2quiz) {include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2Quiz_card.php';}
 	       ?>
 	    </div>
 	    <div class="text-center">
@@ -137,21 +137,21 @@ if($user->data()->first_login_pass_reset == 0) {
 	      <?php
 	          // -- card_flip
 	          //Include the Tier 3 Module 1
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier3/T3M1_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M1_Card.php';
 
 	          //Include the Tier 3 Module 2
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier3/T3M2_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M2_Card.php';
 
 	          //Include the Tier 3 Module 3
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier3/T3M3_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M3_Card.php';
 
 	          //Include the Tier 3 Module 4
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier3/T3M4_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M4_Card.php';
 
 	          //Include the Tier 3 Module 5
-	          include $abs_us_root.$us_url_root.'courses/modules/Tier3/T3M5_Module.php';
+	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M5_Card.php';
 
-            if ($t3quiz) { include $abs_us_root.$us_url_root.'courses/modules/Tier3/T3_Quiz.php';}
+            if ($t3quiz) { include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3Quiz_Card.php';}
 
 	       ?>
 	    </div>
