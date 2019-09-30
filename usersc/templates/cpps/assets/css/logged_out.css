@@ -1,0 +1,30 @@
+/* ---- usersc/login.php ---- */
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../../../../images/fbi_hero.jpg');
+  /* background-image: url('../images/fbi_hero.jpg'); */
+  width: 100%;
+  min-width: 350px;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0);
+}
+
+.w3-modal {
+  background-color: rgba(0,0,0,0);
+}
+
+.join {
+  padding-top: 25px;
+}
+
+@media only screen and (max-width: 770px) {
+  .w3-bar{
+    font-size: 12px;
+  }
+}

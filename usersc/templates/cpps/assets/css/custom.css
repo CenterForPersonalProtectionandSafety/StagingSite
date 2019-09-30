@@ -1,0 +1,203 @@
+/********************** DEFAULT **********************/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  /* vertical-align: baseline;
+  background: transparent; */
+}
+body {
+  /* min-height: 100vh; */
+  position: relative;
+}
+html, body {
+  /* height: 100%; */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/********************** DEFAULT END **********************/
+
+/********************** NAVBAR **********************/
+.navbar {
+	background: #444;
+	-o-transition: all .6s; -moz-transition: all .6s; -webkit-transition: all .6s; -ms-transition: all .6s; transition: all .6s;
+	backface-visibility: hidden;
+}
+/* .navbar.navbar-no-bg { background: #444; background: rgba(0, 0, 0, 0.3); } */
+
+.navbar-dark .navbar-nav { font-size: 15px; color: #fff; font-weight: 600; }
+.navbar-dark .navbar-nav .nav-link { color: #fff; color: rgba(255, 255, 255, 0.8); border: 0; }
+.navbar-dark .navbar-nav .nav-link:hover { color: #fff; }
+.navbar-dark .navbar-nav .nav-link:focus { color: #fff; outline: 0; }
+
+.navbar-expand-md .navbar-nav .nav-link { padding-left: 1rem; padding-right: 1rem; }
+
+.fixed-top.scrolled {
+  background-color: #343A40 !important;
+  transition: background-color 500ms linear;
+}
+/********************** NAVBAR END **********************/
+
+/********************** HERO SECTION END **********************/
+.hero{
+  font-family: 'Cinzel', serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../../../../images/fbi_hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-bottom: 0px;
+}
+
+.hero h1 {
+    font-size: 8em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+.hero h3 {
+    font-size: 2em;
+}
+
+.btn {
+  display: inline-block;
+  width: 200px;
+  padding: .2em;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #fff;
+  border-radius: 20px;
+}
+.btn:hover {
+  background-color: #fff;
+  color:rgba(0,0,0,1);
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #fff;
+}
+.container-fluid {
+  font-size: 12px;
+}
+/********************** HERO SECTION END **********************/
+
+/********************** SECTIONS **********************/
+.custom-col {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.row:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+.sec-btn {
+  display: inline-block;
+  width: 100px;
+  padding: .2em;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #343A40;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #343A40;
+  border-radius: 20px;
+ }
+.sec-btn:hover {
+  background-color: #343A40;
+  color:white;
+  text-decoration: none;
+  font-size: 1.5em;
+  border: 3px solid #fff;
+}
+.sec-description{
+  font-size: 1em;
+  text-align: center;
+}
+/********************** SECTIONS END **********************/
+
+/********************** VIEW PAGES **********************/
+.view-page-logo {
+  padding-bottom: 2em;
+}
+.view-custom{
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 450px) {
+  .view-page-text{
+    font-size: 15px;
+  }
+}
+/********************** VIEW PAGES END **********************/
+
+/********************** USER SETTINGS UPDATE **********************/
+.settings-hero{
+  width: 100%;
+  display: flex;
+  text-align: left;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 6em;
+  padding-bottom: 6em;
+  background-color: #f9f9f9;
+  margin: 0;
+  height: 94vh;
+  overflow: hidden
+}
+
+.settings-hero label {
+    font-size: 1.5em;
+}
+
+.settings-hero h1 {
+    font-size: 5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: #343A40;
+}
+.settings-hero h3 {
+    font-size: 2em;
+}
+
+@media only screen and (max-width: 832px) {
+  .settings-hero h1{
+    font-size: 30px;
+  }
+  .settings-hero label{
+    font-size: 16px;
+  }
+  .settings-hero .sec-btn{
+    margin-top: 1em;
+  }
+}
+/********************** USER SETTINGS UPDATE END **********************/
+
+/********************** FOOTER **********************/
+.login-footer {
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  background-color: #343A40;
+  text-align: center;
+}
+.logout-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  text-align: center;
+}
+/********************** FOOTER END**********************/
