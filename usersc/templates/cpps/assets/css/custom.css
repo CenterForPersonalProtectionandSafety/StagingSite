@@ -38,6 +38,11 @@ html, body {
   background-color: #343A40 !important;
   transition: background-color 500ms linear;
 }
+
+.container .dropdown .dropdown-menu a:hover {
+  color: #fff;
+  background-color: #343A40;
+}
 /********************** NAVBAR END **********************/
 
 /********************** HERO SECTION END **********************/
