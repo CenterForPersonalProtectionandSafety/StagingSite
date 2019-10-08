@@ -40,7 +40,9 @@ html, body {
 }
 
 .container .dropdown .dropdown-menu a:hover {
-  background-color: #f6f6f6;
+  color: #fff;
+  background-color: #313540;
+  /* background-color: #558B82; */
 }
 /********************** NAVBAR END **********************/
 
