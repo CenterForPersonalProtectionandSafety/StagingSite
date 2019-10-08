@@ -128,9 +128,15 @@ if($user->data()->first_login_pass_reset == 0) {
             if($t2show_quiz){ include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2Quiz_Card.php'; }
 	       ?>
 	    </div>
-	    <div class="text-center">
-	      <a href="#" id="sec_tier3_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-down"></i></a>
-	    </div>
+      <?php if ($user->data()->complete_t2quiz == 1){  // Check if Tier 2 quiz is complete before showing Tier 3 section ?>
+  	    <div class="text-center">
+  	      <a href="#" id="sec_tier3_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-down"></i></a>
+  	    </div>
+      <?php } else { //END Check for Tier2 Quiz Completetion?>
+      <div class="text-center">
+        <a href="#" id="to_top_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-up"></i></a>
+      </div>
+      <?php }?>
 	  </div>
 	</div>
 <?php }  //END Tier 2 Check ?>
