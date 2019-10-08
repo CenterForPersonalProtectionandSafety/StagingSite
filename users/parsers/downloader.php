@@ -22,7 +22,7 @@ $api = "http://userspice.com/bugs/api.php";
 		$extractPath = "../../usersc/templates";
     $return = $us_url_root."users/admin.php?view=templates";
 	}elseif($type == 'translation'){
-		$extractPath = "../lang";
+		$extractPath = $abs_us_root.$us_url_root."users";
     $return = $us_url_root."users/admin.php?err=Language(s)+Installed.";
 	}else{
     $data['error'] = "Something is wrong";
