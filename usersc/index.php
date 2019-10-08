@@ -42,9 +42,11 @@ if($user->data()->first_login_pass_reset == 0) {
        <a href="#" id="tier2_link" class="btn btn-md" role="button">Tier 2 Courses</a>
      <?php }  //END Tier 2 Check ?>
 
-     <?php if (checkMenu(5,$user->data()->id)) {  //Links for permission id 5 => (Tier 3 Courses) ?>
-	      <a href="#" id="tier3_link" class="btn btn-md" role="button">Tier 3 Courses</a>
-     <?php }  //END Tier 3 Check ?>
+     <?php if ($user->data()->complete_t2quiz == 1){  // Check if Tier 2 quiz is complete before showing Tier 3 button ?>
+       <?php if (checkMenu(5,$user->data()->id)) {  //Links for permission id 5 => (Tier 3 Courses) ?>
+  	      <a href="#" id="tier3_link" class="btn btn-md" role="button">Tier 3 Courses</a>
+       <?php }  //END Tier 3 Check ?>
+     <?php }  //END Tier 2 Quiz Check ?>
 
 	  </div>
 	</header>
