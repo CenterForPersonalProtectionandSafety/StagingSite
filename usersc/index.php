@@ -14,9 +14,10 @@ if($user->data()->first_login_pass_reset == 0) {
   if($user->data()->complete_t2m3 == 1){ $t2m3 = 1; }
   if($user->data()->complete_t2m4 == 1){ $t2m4 = 1; }
   if($user->data()->complete_t2m5 == 1){ $t2m5 = 1; }
-  if($t2m1 && $t2m2 && $t2m3 && $t2m4 && $t2m5) {
-    $t2quiz = 1;
-  }
+  if($t2m1 && $t2m2 && $t2m3 && $t2m4 && $t2m5){ $t2show_quiz = 1; }
+
+  // Check if Tier 2 quiz is complete before showing Tier 3 section
+  if($user->data()->complete_t2quiz == 1){ $t2quiz = 1; }
 
   // Logic for checking all T3 Modules completed before showing quiz
   if($user->data()->complete_t3m1 == 1){ $t3m1 = 1; }
@@ -24,9 +25,7 @@ if($user->data()->first_login_pass_reset == 0) {
   if($user->data()->complete_t3m3 == 1){ $t3m3 = 1; }
   if($user->data()->complete_t3m4 == 1){ $t3m4 = 1; }
   if($user->data()->complete_t3m5 == 1){ $t3m5 = 1; }
-  if($t3m1 && $t3m2 && $t3m3 && $t3m4 && $t3m5) {
-    $t3quiz = 1;
-  }
+  if($t3m1 && $t3m2 && $t3m3 && $t3m4 && $t3m5){ $t3show_quiz = 1; }
 
 ?>
 
@@ -46,7 +45,7 @@ if($user->data()->first_login_pass_reset == 0) {
      <?php if (checkMenu(5,$user->data()->id)) {  //Links for permission id 5 => (Tier 3 Courses) ?>
 	      <a href="#" id="tier3_link" class="btn btn-md" role="button">Tier 3 Courses</a>
      <?php }  //END Tier 3 Check ?>
-     
+
 	  </div>
 	</header>
 
@@ -124,7 +123,7 @@ if($user->data()->first_login_pass_reset == 0) {
 	          include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2M5_Card.php';
 
             // Include Tier 2 Quiz iff completed all t2 modules
-            if($t2quiz){ include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2Quiz_Card.php'; }
+            if($t2show_quiz){ include $abs_us_root.$us_url_root.'courses/Tier2/cards/T2Quiz_Card.php'; }
 	       ?>
 	    </div>
 	    <div class="text-center">
@@ -134,44 +133,45 @@ if($user->data()->first_login_pass_reset == 0) {
 	</div>
 <?php }  //END Tier 2 Check ?>
 
-<?php if (checkMenu(5,$user->data()->id)) {  //Links for permission id 5 => (Tier 3 Courses) ?>
-	<!-- Tier 3 Course Modules -->
-	<div id="t3course" class="row">
-	  <div class="col-xl custom-col">
-	    <div class="container">
-	      <h2 class="display-4 text-center mt-5 mb-3">TIER 3 MODULES</h2>
-	      <hr>
-	      <p class="sec-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	    </div>
-	    <div class="wrapper">
-	      <?php
-	          // -- card_flip
-	          //Include the Tier 3 Module 1
-	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M1_Card.php';
+<?php if ($user->data()->complete_t2quiz == 1){  // Check if Tier 2 quiz is complete before showing Tier 3 section ?>
+  <?php if (checkMenu(5,$user->data()->id)) {  //Links for permission id 5 => (Tier 3 Courses) ?>
+  	<!-- Tier 3 Course Modules -->
+  	<div id="t3course" class="row">
+  	  <div class="col-xl custom-col">
+  	    <div class="container">
+  	      <h2 class="display-4 text-center mt-5 mb-3">TIER 3 MODULES</h2>
+  	      <hr>
+  	      <p class="sec-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  	    </div>
+  	    <div class="wrapper">
+  	      <?php
+  	          // -- card_flip
+  	          //Include the Tier 3 Module 1
+  	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M1_Card.php';
 
-	          //Include the Tier 3 Module 2
-	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M2_Card.php';
+  	          //Include the Tier 3 Module 2
+  	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M2_Card.php';
 
-	          //Include the Tier 3 Module 3
-	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M3_Card.php';
+  	          //Include the Tier 3 Module 3
+  	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M3_Card.php';
 
-	          //Include the Tier 3 Module 4
-	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M4_Card.php';
+  	          //Include the Tier 3 Module 4
+  	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M4_Card.php';
 
-	          //Include the Tier 3 Module 5
-	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M5_Card.php';
+  	          //Include the Tier 3 Module 5
+  	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M5_Card.php';
 
-            // Include Tier 3 Quiz iff completed all t3 modules
-            if($t3quiz){ include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3Quiz_Card.php'; }
-	       ?>
-	    </div>
-	    <div class="text-center">
-	      <a href="#" id="to_top_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-up"></i></a>
-	    </div>
-	  </div>
-	</div>
-<?php }  //END Tier 3 Check ?>
-
+              // Include Tier 3 Quiz iff completed all t3 modules
+              if($t3show_quiz){ include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3Quiz_Card.php'; }
+  	       ?>
+  	    </div>
+  	    <div class="text-center">
+  	      <a href="#" id="to_top_link" class="sec-btn btn-md" role="button"><i class="fa fa-arrow-up"></i></a>
+  	    </div>
+  	  </div>
+  	</div>
+  <?php }  //END Tier 3 Check ?>
+<?php }  //END Check for Tier2 Quiz Completetion?>
 <?php  languageSwitcher();?>
 <!-- Place any per-page javascript here -->
 <?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>
