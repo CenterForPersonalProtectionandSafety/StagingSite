@@ -1,5 +1,8 @@
 <?php require_once($abs_us_root.$us_url_root.'users/includes/template/header1_must_include.php'); ?>
 
+<!-- Added 1 Hour Cache -->
+<?php header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + (60 * 60))); // 1 hour ?>
+
 <!-- Bootstrap 3 Glyphicons for Compatibility Reasons -->
 <?php require_once($abs_us_root.$us_url_root.'usersc/templates/'.$settings->template.'/assets/fonts/glyphicons.php'); ?>
 
