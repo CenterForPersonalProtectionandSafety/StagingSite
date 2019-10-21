@@ -27,8 +27,8 @@ $GLOBALS['config'] = array(
 	'mysql'      => array(
 		'host'         => 'localhost',
 		'username'     => 'root',
-		'password'     => 'CPPSdev1!Staging',
-		'db'           => 'cpps_fbi_us5',
+		'password'     => 'CPPSdev1!certification',
+		'db'           => 'cpps_cert_us5',
 		),
 	'remember'        => array(
 	  'cookie_name'   => 'pmqesoxiw318374csb',

@@ -7,10 +7,10 @@ BL Module
     <input type="checkbox" id="card5" class="more" aria-hidden="true">
     <div class="content">
         <?php if ($user->data()->complete_t2m5 == 0){ ?>
-        <div class="front" style="background-image: url('/usersc/images/modules/violence_2.png')">
+        <div class="front" style="background-image: url('/usersc/images/modules/t2m5.png')">
         <?php } ?>
         <?php if ($user->data()->complete_t2m5 == 1){ ?>
-        <div class="front" style="background-image: url('/usersc/images/modules/violence_2_completed.png')">
+        <div class="front" style="background-image: url('/usersc/images/modules/t2m5_complete.png')">
         <?php } ?>
             <div class="inner">
                 <h2>Module 5</h2>
@@ -23,7 +23,7 @@ BL Module
             <div class="inner">
                 <div class="description">
                   <h4>Module 5</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>Examples Presentation</p>
                 </div>
                 <label for="card5" class="button return" aria-hidden="true">
                     <i class="fa fa-arrow-left"></i>

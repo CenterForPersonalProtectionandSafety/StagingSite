@@ -107,16 +107,11 @@ function activeDropdown($View, $dropId, $Area = false){
             <a href="client_admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
           </li>
           <!-- <h3 class="menu-title">Settings</h3> -->
-          <li class="menu-title">Manage</li><!-- /.menu-title -->
+          <li class="menu-title">Manage</li>
             <li <?=($view == 'users') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=users"><i class="menu-icon fa fa-user"></i>Users</a></li>
             <li <?=($view == 'learner') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=learner"><i class="menu-icon fa fa-users"></i>Learners List</a></li>
 
-          <?php if (checkMenu(2,$user->data()->id)) {?>
-            <li class="menu-title">Upload</li><!-- /.menu-title -->
-              <li <?=($view == 'upload') ? 'class="active"' : '' ;?>><a href="client_admin.php?view=upload"><i class="menu-icon fa fa-user"></i>User Upload</a></li>
-          <?php } ?>
-
-          <h3 class="menu-title">Misc</h3><!-- /.menu-title -->
+          <h3 class="menu-title">Misc</h3>
           <li class="menu-item">
             <?php if(file_exists($abs_us_root.$us_url_root.'usersc/includes/admin_menu.php')){
               include($abs_us_root.$us_url_root.'usersc/includes/admin_menu.php');

@@ -1,6 +1,6 @@
 <!-- This is an example widget file.  It will be included on the statistics page of the Dashboard. -->
-<h4>Courses Completed</h4></br><hr>
-<div class="row">
+<h4>Courses Completed</h4></br>
+
 
 <!-- Do any php that needs to happen. You already have access to the db -->
 <?php
@@ -34,165 +34,143 @@
   //Queries for T3M3 Course
   $t3m3Complete = $db->query("SELECT id FROM users WHERE complete_t3m3 = 1",array(1))->count();
   $t3m3Incomplete = $db->query("SELECT id FROM users WHERE complete_t3m3 = 0",array(0))->count();
-  //Queries for T3M4 Course
-  $t3m4Complete = $db->query("SELECT id FROM users WHERE complete_t3m4 = 1",array(1))->count();
-  $t3m4Incomplete = $db->query("SELECT id FROM users WHERE complete_t3m4 = 0",array(0))->count();
-  //Queries for T3M5 Course
-  $t3m5Complete = $db->query("SELECT id FROM users WHERE complete_t3m5 = 1",array(1))->count();
-  $t3m5Incomplete = $db->query("SELECT id FROM users WHERE complete_t3m5 = 0",array(0))->count();
   //Queries for T3Quiz Course
   $t3quizComplete = $db->query("SELECT id FROM users WHERE complete_t3quiz = 1",array(1))->count();
   $t3quizIncomplete = $db->query("SELECT id FROM users WHERE complete_t3quiz = 0",array(0))->count();
 ?>
 
 <style>
-
 .chart:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition-timing-function: ease;
   transition: 0.5s;
 }
-
 </style>
 
+
   <!-- TIER 2 -->
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m1">
-      <div class="card chart">
-          <div class="card-body">
-              <h4 class="mb-3">Tier 2 Module 1 </h4>
-              <!-- id should be unique -->
-              <canvas id="t2m1-chart"></canvas>
-          </div>
-      </div>
-    </a>
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Tier-2</h4></br>
+    </div>
   </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m2">
-      <div class="card chart">
+
+  <div class="row">
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m1">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 2 Module 2 </h4>
-              <!-- id should be unique -->
-              <canvas id="t2m2-chart"></canvas>
+            <h4 class="mb-3">Tier 2 Module 1 </h4>
+            <canvas id="t2m1-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m3">
-      <div class="card chart">
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m2">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 2 Module 3 </h4>
-              <!-- id should be unique -->
-              <canvas id="t2m3-chart"></canvas>
+            <h4 class="mb-3">Tier 2 Module 2 </h4>
+            <canvas id="t2m2-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m4">
-      <div class="card chart">
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m3">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 2 Module 4 </h4>
-              <!-- id should be unique -->
-              <canvas id="t2m4-chart"></canvas>
+            <h4 class="mb-3">Tier 2 Module 3 </h4>
+            <canvas id="t2m3-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m5">
-      <div class="card chart">
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m4">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 2 Module 5 </h4>
-              <!-- id should be unique -->
-              <canvas id="t2m5-chart"></canvas>
+            <h4 class="mb-3">Tier 2 Module 4 </h4>
+            <canvas id="t2m4-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2quiz">
-      <div class="card chart">
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2m5">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 2 Quiz </h4>
-              <!-- id should be unique -->
-              <canvas id="t2quiz-chart"></canvas>
+            <h4 class="mb-3">Tier 2 Module 5 </h4>
+            <canvas id="t2m5-chart"></canvas>
           </div>
-      </div>
-    </a>
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t2quiz">
+        <div class="card chart">
+          <div class="card-body">
+            <h4 class="mb-3">Tier 2 Quiz </h4>
+            <canvas id="t2quiz-chart"></canvas>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 
   <!-- TIER 3 -->
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m1">
-      <div class="card chart">
-          <div class="card-body">
-              <h4 class="mb-3">Tier 3 Module 1 </h4>
-              <!-- id should be unique -->
-              <canvas id="t3m1-chart"></canvas>
-          </div>
-      </div>
-    </a>
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Tier-3</h4></br>
+    </div>
   </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m2">
-      <div class="card chart">
+
+  <div class="row">
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m1">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 3 Module 2 </h4>
-              <!-- id should be unique -->
-              <canvas id="t3m2-chart"></canvas>
+            <h4 class="mb-3">Tier 3 Module 1 </h4>
+            <canvas id="t3m1-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m3">
-      <div class="card chart">
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m2">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 3 Module 3 </h4>
-              <!-- id should be unique -->
-              <canvas id="t3m3-chart"></canvas>
+            <h4 class="mb-3">Tier 3 Module 2 </h4>
+            <canvas id="t3m2-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m4">
-      <div class="card chart">
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m3">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 3 Module 4 </h4>
-              <!-- id should be unique -->
-              <canvas id="t3m4-chart"></canvas>
+            <h4 class="mb-3">Tier 3 Module 3 </h4>
+            <canvas id="t3m3-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3m5">
-      <div class="card chart">
+        </div>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3quiz">
+        <div class="card chart">
           <div class="card-body">
-              <h4 class="mb-3">Tier 3 Module 5 </h4>
-              <!-- id should be unique -->
-              <canvas id="t3m5-chart"></canvas>
+            <h4 class="mb-3">Tier 3 Quiz </h4>
+            <canvas id="t3quiz-chart"></canvas>
           </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-lg-6">
-    <a href="<?=$us_url_root?>usersc/client_admin.php?view=t3quiz">
-      <div class="card chart">
-          <div class="card-body">
-              <h4 class="mb-3">Tier 3 Quiz </h4>
-              <!-- id should be unique -->
-              <canvas id="t3quiz-chart"></canvas>
-          </div>
-      </div>
-    </a>
+        </div>
+      </a>
+    </div>
   </div>
 
 
-</div> <!-- end of widget -->
+
+<!-- end of widget -->
 <!-- Put any javascript here -->
 <script type="text/javascript">
 $(document).ready(function() {
@@ -414,58 +392,6 @@ $(document).ready(function() {
           data: {
               datasets: [ {
                   data: [ <?=$t3m3Complete?>, <?=$t3m3Incomplete?> ],
-                  backgroundColor: [
-                                      "rgba(224, 87, 106, 1)",
-                                      "rgba(93, 225, 207, 1)"
-                                  ],
-                  hoverBackgroundColor: [
-                                      "rgba(224, 87, 106, .6)",
-                                      "rgba(93, 225, 207, .7)"
-                                  ]
-
-                              } ],
-              labels: [
-                              "Complete",
-                              "Incomplete"
-                          ]
-          },
-          options: {
-              responsive: true
-          }
-      } );
-  var ctx = document.getElementById( "t3m4-chart" );
-      ctx.height = 125;
-      var blChart = new Chart( ctx, {
-          type: 'pie',
-          data: {
-              datasets: [ {
-                  data: [ <?=$t3m4Complete?>, <?=$t3m4Incomplete?> ],
-                  backgroundColor: [
-                                      "rgba(224, 87, 106, 1)",
-                                      "rgba(93, 225, 207, 1)"
-                                  ],
-                  hoverBackgroundColor: [
-                                      "rgba(224, 87, 106, .6)",
-                                      "rgba(93, 225, 207, .7)"
-                                  ]
-
-                              } ],
-              labels: [
-                              "Complete",
-                              "Incomplete"
-                          ]
-          },
-          options: {
-              responsive: true
-          }
-      } );
-  var ctx = document.getElementById( "t3m5-chart" );
-      ctx.height = 125;
-      var blChart = new Chart( ctx, {
-          type: 'pie',
-          data: {
-              datasets: [ {
-                  data: [ <?=$t3m5Complete?>, <?=$t3m5Incomplete?> ],
                   backgroundColor: [
                                       "rgba(224, 87, 106, 1)",
                                       "rgba(93, 225, 207, 1)"

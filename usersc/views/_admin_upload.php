@@ -69,10 +69,10 @@
 
 ?>
 
-<div id="page-wrapper">
-    <div class="container">
+<!-- <div id="page-wrapper">
+    <div class="container"> -->
         <!-- Page Heading -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-xs-12 col-md-6">
                 <h1>Manage Users</h1>
             </div>
@@ -88,7 +88,7 @@
           </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!-- End of main content section -->

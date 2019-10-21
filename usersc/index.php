@@ -23,9 +23,7 @@ if($user->data()->first_login_pass_reset == 0) {
   if($user->data()->complete_t3m1 == 1){ $t3m1 = 1; }
   if($user->data()->complete_t3m2 == 1){ $t3m2 = 1; }
   if($user->data()->complete_t3m3 == 1){ $t3m3 = 1; }
-  if($user->data()->complete_t3m4 == 1){ $t3m4 = 1; }
-  if($user->data()->complete_t3m5 == 1){ $t3m5 = 1; }
-  if($t3m1 && $t3m2 && $t3m3 && $t3m4 && $t3m5){ $t3show_quiz = 1; }
+  if($t3m1 && $t3m2 && $t3m3){ $t3show_quiz = 1; }
 
 ?>
 
@@ -63,7 +61,7 @@ if($user->data()->first_login_pass_reset == 0) {
 	      <div class="aboutcard">
 	          <input type="checkbox" class="more" aria-hidden="true">
 	          <div class="content">
-	              <div class="front" style="background-image: url('/usersc/images/company.png')">
+	              <div class="front" style="background-image: url('/usersc/images/aboutus/company.png')">
 	                  <div class="inner">
 	                      <h4>50% of Fortune 100 corporations</h4>
 	                  </div>
@@ -73,7 +71,7 @@ if($user->data()->first_login_pass_reset == 0) {
 	      <div class="aboutcard">
 	          <input type="checkbox" class="more" aria-hidden="true">
 	          <div class="content">
-	              <div class="front" style="background-image: url('/usersc/images/university.png')">
+	              <div class="front" style="background-image: url('/usersc/images/aboutus/university.png')">
 	                  <div class="inner">
 	                      <h4>1600 colleges and universities</h4>
 	                  </div>
@@ -83,7 +81,7 @@ if($user->data()->first_login_pass_reset == 0) {
 	      <div class="aboutcard">
 	          <input type="checkbox" class="more" aria-hidden="true">
 	          <div class="content">
-	              <div class="front" style="background-image: url('/usersc/images/hospital.png')">
+	              <div class="front" style="background-image: url('/usersc/images/aboutus/hospital.png')">
 	                  <div class="inner">
 	                      <h4>2000 hospitals & many non-profit organizations</h4>
 	                  </div>
@@ -162,12 +160,6 @@ if($user->data()->first_login_pass_reset == 0) {
 
   	          //Include the Tier 3 Module 3
   	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M3_Card.php';
-
-  	          //Include the Tier 3 Module 4
-  	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M4_Card.php';
-
-  	          //Include the Tier 3 Module 5
-  	          include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3M5_Card.php';
 
               // Include Tier 3 Quiz iff completed all t3 modules
               if($t3show_quiz){ include $abs_us_root.$us_url_root.'courses/Tier3/cards/T3Quiz_Card.php'; }
