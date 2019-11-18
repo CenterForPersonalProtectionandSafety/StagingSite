@@ -23,29 +23,11 @@ for($i = 1; $i < $self_path_length; $i++){
 require_once $abs_us_root.$us_url_root.'users/helpers/helpers.php';
 
 // // Live
-// $GLOBALS['config'] = array(
-// 	'mysql'      => array(
-// 		'host'         => 'localhost',
-// 		'username'     => 'root',
-// 		'password'     => 'CPPSdev1!BL',
-// 		'db'           => 'cpps_beyondlockdown_us5',
-// 		),
-// 	'remember'        => array(
-// 	  'cookie_name'   => 'pmqesoxiw318374csb',
-// 	  'cookie_expiry' => 604800  //One week, feel free to make it longer
-// 	),
-// 	'session' => array(
-// 	  'session_name' => 'user',
-// 	  'token_name' => 'token',
-// 	)
-// );
-
-// Local Host
 $GLOBALS['config'] = array(
 	'mysql'      => array(
 		'host'         => 'localhost',
-		'username'     => 'cpps_user',
-		'password'     => 'CPPSdev1!',
+		'username'     => 'root',
+		'password'     => 'CPPSdev1!BL',
 		'db'           => 'cpps_beyondlockdown_us5',
 		),
 	'remember'        => array(
@@ -57,6 +39,24 @@ $GLOBALS['config'] = array(
 	  'token_name' => 'token',
 	)
 );
+
+// Local Host
+// $GLOBALS['config'] = array(
+// 	'mysql'      => array(
+// 		'host'         => 'localhost',
+// 		'username'     => 'cpps_user',
+// 		'password'     => 'CPPSdev1!',
+// 		'db'           => 'cpps_beyondlockdown_us5',
+// 		),
+// 	'remember'        => array(
+// 	  'cookie_name'   => 'pmqesoxiw318374csb',
+// 	  'cookie_expiry' => 604800  //One week, feel free to make it longer
+// 	),
+// 	'session' => array(
+// 	  'session_name' => 'user',
+// 	  'token_name' => 'token',
+// 	)
+// );
 
 
 
