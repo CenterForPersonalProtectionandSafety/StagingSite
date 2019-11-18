@@ -209,10 +209,10 @@ if (!empty($_POST)) {
         <tbody>
         <?php foreach ($userData as $v1) { ?>
           <tr>
-            <td><?=$v1->id?></td>
-            <td><?=$v1->username?></td>
-            <td><?=$v1->fname?> <?=$v1->lname?></td>
-            <td><?=$v1->email?></td>
+            <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->id?></a></td>
+            <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->username?></a></td>
+            <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->fname?> <?=$v1->lname?></a></td>
+            <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->email?></a></td>
           </tr>
         <?php } ?>
         </tbody>

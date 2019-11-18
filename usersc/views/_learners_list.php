@@ -36,10 +36,10 @@
       <tbody>
       <?php foreach ($userData as $v1) { ?>
         <tr>
-          <td><?=$v1->fname?> <?=$v1->lname?></td>
-          <td><?=$v1->email?></td>
-          <td><?php if($v1->complete_elearning==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
-          <td><?php if($v1->complete_video==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></td>
+          <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->fname?> <?=$v1->lname?></a></td>
+          <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?=$v1->email?></a></td>
+          <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?php if($v1->complete_elearning==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></a></td>
+          <td><a class="nounderline" href='client_admin.php?view=user&id=<?=$v1->id?>'><?php if($v1->complete_video==0) {?> <p>incomplete</p> <?php } else {?> <p>complete</p> <?php }?></a></td>
         </tr>
       <?php } ?>
       </tbody>
