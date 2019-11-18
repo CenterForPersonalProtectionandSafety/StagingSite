@@ -44,7 +44,7 @@ if (!empty($_POST['login_hook'])) {
 
   //Check to see if recaptcha is enabled
   if($settings->recaptcha == 1){
-
+  if(!function_exists('post_captcha')){
     function post_captcha($user_response) {
     global $settings;
     $fields_string = '';
@@ -65,6 +65,7 @@ if (!empty($_POST['login_hook'])) {
     $result = curl_exec($ch);
     curl_close($ch);
     return json_decode($result, true);
+}
 }
 
 // Call the function post_captcha

@@ -280,25 +280,4 @@ class User {
 			throw new Exception('There was a problem updating.');
 		}
 	}
-
-	//This is for future versions of UserSpice
-	public function hasPermission($key){
-		$group = $this->_db->get('permissions', array('id', '=', $this->data()->permissions));
-		if ($group->count()) {
-			$permissions = json_decode($group->first()->permissions, true);
-			if ($permissions[$key] == true) {
-				return true;
-			}
-		}
-		return false;
-	}
-	//This is for future versions of UserSpice
-	public function noPermissionRedirect($perm,$location){
-		if(!$this->hasPermission($perm)){
-			Redirect::to($location);
-		}else{
-			return true;
-		}
-	}
-
 }

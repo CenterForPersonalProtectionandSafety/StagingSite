@@ -14,6 +14,7 @@
   <script src="js/jquery.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+
 <style>
 .btn-circle.btn-lg {
   width: 40px;
@@ -23,6 +24,8 @@
   line-height: 1.33;
   border-radius: 25px;
 }
+
+form label {font-weight:600}
 
 .feedback{position: fixed;}
 
@@ -105,8 +108,8 @@ function activeDropdown($View, $dropId, $Area = false){
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="<?=$us_url_root?>index.php"><img src="<?=$us_url_root?>usersc/images/logo.png" alt="Logo"></a>
-        <a class="navbar-brand hidden" href="./"><img src="<?=$us_url_root?>usersc/images/home.png" alt="Logo"></a>
+        <a class="navbar-brand" href="<?=$us_url_root?>index.php"><img src="images/logo.png" alt="Logo"></a>
+        <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
       </div>
 
       <div id="main-menu" class="main-menu collapse navbar-collapse">

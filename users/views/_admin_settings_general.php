@@ -28,9 +28,13 @@ includeHook($hooks,'pre');
           <div class="card-body">
             <!-- Site Name -->
             <div class="form-group">
+              <label for="site_name">Free API Key (<a href="https://userspice.com/developer-api-keys/">Get One Here</a>) <a href="#!" tabindex="-1" title="Note" data-trigger="focus" class="nounderline" data-toggle="popover" data-content="Get your free API key to use features such as Auto Updates, Bug Reports, and Spice Shaker"><i class="fa fa-question-circle"></i></a></label>
+                <input type="password" autocomplete="off" class="form-control ajxtxt" data-desc="API Key" name="spice_api" id="spice_api" value="<?=$settings->spice_api?>">
+              </div>
+            <!-- Site Name -->
+            <div class="form-group">
               <label for="site_name">Site Name <a href="#!" tabindex="-1" title="Note" data-trigger="focus" class="nounderline" data-toggle="popover" data-content="Modify this to change the name of your site, including in the <title> tag, the maintenance page and some system emails."><i class="fa fa-question-circle"></i></a></label>
                 <input type="text" autocomplete="off" class="form-control ajxtxt" data-desc="Site Name" name="site_name" id="site_name" value="<?=$settings->site_name?>">
-
               </div>
 
               <!-- Copyright Option -->

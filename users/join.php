@@ -170,6 +170,7 @@ if(Input::exists()){
         if($validation->passed() && $agreement_checkbox){
                 //Logic if ReCAPTCHA is turned ON
         if($settings->recaptcha > 0){
+          if(!function_exists('post_captcha')){
               function post_captcha($user_response) {
               global $settings;
               $fields_string = '';
@@ -192,6 +193,7 @@ if(Input::exists()){
 
               return json_decode($result, true);
           }
+        }
 
           // Call the function post_captcha
           $res = post_captcha($_POST['g-recaptcha-response']);
@@ -252,9 +254,22 @@ if(Input::exists()){
                         $db->update('users',$theNewId,['twoKey' => $twoKey]);
                         }
                         include($abs_us_root.$us_url_root.'usersc/scripts/during_user_creation.php');
-                        if($act==1) logger($theNewId,"User","Registration completed and verification email sent.");
-                        if($act==0) logger($theNewId,"User","Registration completed.");
-                        Redirect::to($us_url_root.'users/joinThankYou.php');
+
+                        if($act == 1) {
+                          logger($theNewId,"User","Registration completed and verification email sent.");
+                          $query = $db->query("SELECT * FROM email");
+                          $results = $query->first();
+                          $act = $results->email_act;
+                          require $abs_us_root.$us_url_root.'users/views/_joinThankYou_verify.php';
+                        }else{
+                          logger($theNewId,"User","Registration completed.");
+                          if(file_exists($abs_us_root.$us_url_root.'usersc/views/_joinThankYou.php')){
+                            require_once $abs_us_root.$us_url_root.'usersc/views/_joinThankYou.php';
+                          }else{
+                            require $abs_us_root.$us_url_root.'users/views/_joinThankYou.php';
+                          }
+                        }
+
                 }
 
         } //Validation and agreement checbox
