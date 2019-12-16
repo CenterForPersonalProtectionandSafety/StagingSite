@@ -8,14 +8,21 @@
 <link rel="stylesheet" href="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/css/bootstrap.min.css">
 
 <!-- Custom CSS -->
-<link rel="stylesheet" href="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/css/datatables.min.css">
-<link rel="stylesheet" href="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/css/custom.min.css">
-<link rel="stylesheet" href="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/css/card-flip.min.css">
-<link rel="stylesheet" href="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/css/hamburgers.min.css">
+<link rel="stylesheet" href="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/css/custom.css">
 
 <!-- Font Links -->
 <link rel="stylesheet" href="<?=$us_url_root?>users/fonts/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/css/robotofont.min.css">
+
+
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/js/jquery.min.js"></script>
+
+<!-- JS Libraries -->
+<script type="text/javascript" src="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/js/popper.min.js"></script>
+<script type="text/javascript" src="<?=$us_url_root?>usersc/templates/<?=$settings->template?>/assets/js/bootstrap.min.js"></script>
 
 <style media="screen">
   body {

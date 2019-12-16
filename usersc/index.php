@@ -172,6 +172,41 @@ if($user->data()->first_login_pass_reset == 0) {
   	</div>
   <?php }  //END Tier 3 Check ?>
 <?php }  //END Check for Tier2 Quiz Completetion?>
+
 <?php  languageSwitcher();?>
+
 <!-- Place any per-page javascript here -->
+<script type="text/javascript">
+  function scrollToAnchor(o) {
+      var c = $("div[id='" + o + "']");
+      $("html,body").animate({
+          scrollTop: c.offset().top
+      }, "slow")
+  }
+  function scrollupToAnchor(o) {
+      $("div[id='" + o + "']");
+      $("html,body").animate({
+          scrollTop: 0
+      }, "slow")
+  }
+  $("#link_about").click(function() {
+      scrollToAnchor("aboutus")
+  });
+  $("#tier2_link").click(function() {
+      scrollToAnchor("t2course")
+  });
+  $("#tier3_link").click(function() {
+      scrollToAnchor("t3course")
+  });
+  $("#sec_tier2_link").click(function() {
+      scrollToAnchor("t2course")
+  });
+  $("#sec_tier3_link").click(function() {
+      scrollToAnchor("t3course")
+  });
+  $("#to_top_link").click(function() {
+      scrollupToAnchor("hero-section")
+  });
+</script>
+
 <?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>
