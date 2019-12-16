@@ -127,8 +127,8 @@ if (!empty($_POST['login_hook'])) {
     $token = Token::generate();
     ?>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="templates/cpps/assets/css/logged_out.css">
+<link rel="stylesheet" type="text/css" href="templates/cpps/assets/css/w3.min.css">
+<link rel="stylesheet" type="text/css" href="templates/cpps/assets/css/logged_out.min.css">
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(){
       document.getElementById('loginModal').style.display='block'
